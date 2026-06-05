@@ -1,0 +1,2 @@
+# SPA fallback so client-side routes resolve on direct hits / refresh (Netlify).
+/*    /index.html   200

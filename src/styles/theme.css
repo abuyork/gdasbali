@@ -1,0 +1,263 @@
+@import 'tailwindcss';
+
+/*
+  GDAS Bali — design tokens
+  Editorial / quiet-luxury language adapted from the Ashton Bespoke reference:
+  warm parchment canvas, ink text, a single deep botanical accent (jungle green),
+  a warm clay secondary, letterspaced serif display, hairline borders, no shadows.
+*/
+@theme {
+  /* ---- Colors ---- */
+  --color-canvas: #ece6da; /* warm parchment — dominant page surface */
+  --color-surface: #f5f1e9; /* elevated/lighter surface */
+  --color-ink: #2b2823; /* primary text, hairlines */
+  --color-ink-soft: #5c574e; /* secondary text, captions */
+  --color-jungle: #2e3a2c; /* deep botanical accent — dark bands & footer */
+  --color-jungle-soft: #3c4a38;
+  --color-clay: #a06a4b; /* warm secondary accent — CTAs, links */
+  --color-clay-deep: #855838;
+  --color-line: #cfc7b8; /* hairline border on canvas */
+  --color-white: #ffffff;
+
+  /* ---- Typography ---- */
+  --font-serif: 'Cormorant Garamond', ui-serif, Georgia, 'Times New Roman', serif;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  /* Editorial type scale (serif display set wide, like the reference) */
+  --text-eyebrow: 0.8125rem; /* 13px — tracked uppercase labels */
+  --text-body: 1.0625rem; /* 17px */
+  --text-lead: 1.25rem; /* 20px */
+  --text-h3: 1.75rem; /* 28px */
+  --text-h2: 2.5rem; /* 40px */
+  --text-h1: 3.5rem; /* 56px */
+  --text-display: 4.5rem; /* 72px */
+
+  /* ---- Spacing rhythm ---- */
+  --spacing-section: 7.5rem; /* 120px vertical section rhythm */
+
+  /* ---- Radius (sharp/editorial) ---- */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+
+  /* ---- Container ---- */
+  --container-prose: 46rem;
+
+  /* ---- Motion ---- */
+  --ease-out-soft: cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-fade-in: fade-in 0.5s ease both;
+  --animate-fade-up: fade-up 0.7s var(--ease-out-soft) both;
+  --animate-ken-burns: ken-burns 14s ease-out both;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes ken-burns {
+  from {
+    transform: scale(1.12);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* ---- Base layer ---- */
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    line-height: 1.1;
+    margin: 0;
+  }
+
+  /* Wide tracking on serif display — the editorial signature */
+  .font-display {
+    font-family: var(--font-serif);
+    letter-spacing: 0.02em;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Visible focus ring for keyboard users (a11y) */
+  :focus-visible {
+    outline: 2px solid var(--color-clay);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: var(--color-clay);
+    color: var(--color-white);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Tracked uppercase eyebrow label (editorial chapter mark) */
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: var(--text-eyebrow);
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-clay);
+  }
+
+  /* Navigation link with an underline that grows from the left on hover/focus */
+  .nav-link {
+    position: relative;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 100%;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s var(--ease-out-soft);
+  }
+  .nav-link:hover::after,
+  .nav-link[aria-current='page']::after,
+  .nav-link:focus-visible::after {
+    transform: scaleX(1);
+  }
+
+  /* Route-change fade — keyed on pathname so each navigation replays it */
+  .page-enter {
+    animation: var(--animate-fade-in);
+  }
+
+  /* Full-bleed background video (YouTube iframe scaled to cover the hero) */
+  .bg-video {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+  .bg-video iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* Over-scale so any residual YouTube chrome (top title / bottom bar) is
+       cropped outside the visible area. */
+    transform: translate(-50%, -50%) scale(1.35);
+    width: 100vw;
+    height: 56.25vw; /* 16:9 derived from width */
+    min-width: 177.78vh; /* 16:9 derived from height — guarantees cover */
+    min-height: 100vh;
+    border: 0;
+    pointer-events: none;
+  }
+
+  /* Hairline-underlined inline link, no color shift on hover */
+  .link-underline {
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 1px;
+    transition: opacity 0.2s ease;
+  }
+  .link-underline:hover {
+    opacity: 0.65;
+  }
+
+  /* Primary action — clay outline, editorial (no fill, no shadow) */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-sans);
+    font-size: var(--text-eyebrow);
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 0.875rem 1.75rem;
+    border: 1px solid var(--color-clay);
+    color: var(--color-clay);
+    border-radius: var(--radius-md);
+    transition:
+      background-color 0.25s ease,
+      color 0.25s ease;
+  }
+  .btn:hover {
+    background-color: var(--color-clay);
+    color: var(--color-white);
+  }
+  .btn-solid {
+    background-color: var(--color-jungle);
+    border-color: var(--color-jungle);
+    color: var(--color-white);
+  }
+  .btn-solid:hover {
+    background-color: var(--color-jungle-soft);
+    border-color: var(--color-jungle-soft);
+    color: var(--color-white);
+  }
+  .btn-ondark {
+    border-color: var(--color-white);
+    color: var(--color-white);
+  }
+  .btn-ondark:hover {
+    background-color: var(--color-white);
+    color: var(--color-ink);
+  }
+}
