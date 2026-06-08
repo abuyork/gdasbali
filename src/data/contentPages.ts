@@ -21,7 +21,7 @@ export interface ContentPageData {
   noindex?: boolean
 }
 
-const HERO = 'https://gdasbali.com/wp-content/uploads/2025/03/GdasLandscape-1024x681.jpg'
+const HERO = '/wp/2025/03/GdasLandscape-1024x681.jpg'
 const WA = 'https://wa.me/628113906144'
 
 export const CONTENT_PAGES: Record<string, ContentPageData> = {
@@ -30,7 +30,7 @@ export const CONTENT_PAGES: Record<string, ContentPageData> = {
     title: "Tarzan's Jungle Retreat — A Wild Awakening",
     subtitle:
       "Awaken your spirit and reconnect with your primal nature in this immersive retreat led by Tariq \"Tarzan\" Spears.",
-    image: 'https://gdasbali.com/wp-content/uploads/2025/11/V-2-scaled.jpg',
+    image: '/wp/2025/11/V-2-scaled.jpg',
     imageAlt: "Lush jungle setting of Tarzan's Jungle Retreat at GDAS Bali",
     intro: [
       "Set amidst the lush beauty of Bali, Tarzan's Jungle merges luxury wellness with raw adventure — blending movement, endurance training, and holistic rituals designed to strengthen the body and expand the mind. Guided by nature's rhythm, each day invites transformation, balance, and self-mastery.",

@@ -13,19 +13,19 @@ export const FACILITIES: Facility[] = [
     hours: '09:00 – 20:00',
     gallery: [
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2024/05/main-pool-1.jpg',
+        src: '/wp/2024/05/main-pool-1.jpg',
         alt: 'GDAS Bali swimming pool overlooking lush green rice paddies in Ubud',
       },
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2024/05/main-pool-2.jpg',
+        src: '/wp/2024/05/main-pool-2.jpg',
         alt: 'Sun loungers beside the resort pool surrounded by tropical greenery',
       },
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2024/05/main-pool-3.jpg',
+        src: '/wp/2024/05/main-pool-3.jpg',
         alt: 'Shaded poolside cabana for in-house guests at GDAS Bali',
       },
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2024/05/main-pool-4.jpg',
+        src: '/wp/2024/05/main-pool-4.jpg',
         alt: 'Guests relaxing in the swimming pool with rice field views',
       },
     ],
@@ -41,19 +41,19 @@ export const FACILITIES: Facility[] = [
     ],
     gallery: [
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2024/05/garden-lounge-1.jpg',
+        src: '/wp/2024/05/garden-lounge-1.jpg',
         alt: 'The Garden Lounge open-air event space surrounded by tropical gardens',
       },
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2024/05/garden-lounge-2.jpg',
+        src: '/wp/2024/05/garden-lounge-2.jpg',
         alt: 'Decorated garden event setup at GDAS Bali Garden Lounge',
       },
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2024/05/garden-lounge-3.jpg',
+        src: '/wp/2024/05/garden-lounge-3.jpg',
         alt: 'Lush greenery framing the multi-function Garden Lounge venue',
       },
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2024/05/garden-lounge-4.jpg',
+        src: '/wp/2024/05/garden-lounge-4.jpg',
         alt: 'Elegant seating arrangement in the GDAS Bali Garden Lounge',
       },
     ],
@@ -92,19 +92,19 @@ export const FACILITIES: Facility[] = [
     hours: '06:00 – 20:00',
     gallery: [
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2023/04/hot-yoga-studio-1.jpg',
+        src: '/wp/2023/04/hot-yoga-studio-1.jpg',
         alt: 'GDAS Bali hot yoga studio interior with warm ambient lighting',
       },
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2023/04/hot-yoga-studio-2.jpg',
+        src: '/wp/2023/04/hot-yoga-studio-2.jpg',
         alt: 'Private hot yoga space equipped with UV-C lights',
       },
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2023/04/hot-yoga-studio-3.jpg',
+        src: '/wp/2023/04/hot-yoga-studio-3.jpg',
         alt: 'Yoga mats laid out in the heated GDAS Bali studio',
       },
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2023/04/hot-yoga-studio-4.jpg',
+        src: '/wp/2023/04/hot-yoga-studio-4.jpg',
         alt: 'Calm interior of the hot yoga studio at GDAS Bali resort',
       },
     ],
@@ -146,31 +146,31 @@ export const FACILITIES: Facility[] = [
     ],
     gallery: [
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2026/02/wellness-facilities-1.jpg',
+        src: '/wp/2026/02/wellness-facilities-1.jpg',
         alt: 'Overview of the GDAS Bali wellness facilities set in tropical surroundings',
       },
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2026/02/wellness-facilities-2.jpg',
+        src: '/wp/2026/02/wellness-facilities-2.jpg',
         alt: 'Yoga shala overlooking lush rice fields at GDAS Bali',
       },
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2026/02/wellness-facilities-3.jpg',
+        src: '/wp/2026/02/wellness-facilities-3.jpg',
         alt: 'Open-air yoga shala space surrounded by nature',
       },
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2026/02/wellness-facilities-4.jpg',
+        src: '/wp/2026/02/wellness-facilities-4.jpg',
         alt: 'Infrared sauna cabin in the GDAS Bali wellness centre',
       },
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2026/02/wellness-facilities-5.jpg',
+        src: '/wp/2026/02/wellness-facilities-5.jpg',
         alt: 'Traditional wooden sauna room at GDAS Bali resort',
       },
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2026/02/wellness-facilities-6.jpg',
+        src: '/wp/2026/02/wellness-facilities-6.jpg',
         alt: 'Contrast pool with cold plunge and warm plunge for hydrotherapy',
       },
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2026/02/wellness-facilities-7.jpg',
+        src: '/wp/2026/02/wellness-facilities-7.jpg',
         alt: 'Contrast pool therapy area at the GDAS Bali wellness facilities',
       },
     ],

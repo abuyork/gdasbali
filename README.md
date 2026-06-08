@@ -59,8 +59,26 @@ All copy is sourced verbatim from the live site and stored in `../content/*.md`
 Change copy/images by editing `src/data/*.ts` — pages render from data, so you rarely touch JSX.
 Add a room/facility/treatment/offer = add an object to the relevant array.
 
+## Media / images
+The resort's WordPress host **blocks cross-domain hotlinking**, so referencing
+`gdasbali.com/wp-content/...` directly makes images invisible on any other domain
+(incl. Netlify). All media is therefore referenced as **same-origin `/wp/*` paths**
+and served via a proxy:
+- **Local dev & preview:** `vite.config.ts` proxies `/wp` → `gdasbali.com/wp-content/uploads`.
+- **Production (Netlify):** `public/_redirects` proxies `/wp/*` server-side.
+- Test locally with `pnpm dev` (or `pnpm preview`) — the proxy is active there.
+
+**To fully self-host** (recommended for production — no runtime dependency on the
+WP host): run `node scripts/localize-media.mjs` on a machine with network access.
+It downloads every referenced image into `public/wp/`. Commit that folder and redeploy —
+Netlify serves the static files directly (the proxy stays as a fallback). Then
+optimise to WebP/AVIF + `srcset` as a follow-up.
+
+> **SEO note:** set `SITE_URL` in `src/data/site.ts` to your real deployed origin so
+> canonical URLs and absolute `og:image` tags are correct.
+
 ## To do (next passes)
-- Re-host + optimise images (currently hotlinking `gdasbali.com/wp-content/...`); convert to WebP/AVIF with `srcset`.
+- Self-host + optimise images (run `scripts/localize-media.mjs`, then convert to WebP/AVIF with `srcset`).
 - Migrate full legal text (privacy / general policy) from `content/info/*.md`.
 - Build out the remaining dated-retreat pages (writers, sol-reset, etc.) using the `Event` JSON-LD builder.
 - Wire the booking widget / contact form to the real backend if desired.

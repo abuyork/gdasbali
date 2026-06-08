@@ -23,7 +23,7 @@ export function SignatureRetreat() {
         eyebrow="GDAS Bali"
         title="Signature Retreat"
         subtitle={SIGNATURE_INTRO}
-        image="https://gdasbali.com/wp-content/uploads/2025/03/GdasLandscape-1024x681.jpg"
+        image="/wp/2025/03/GdasLandscape-1024x681.jpg"
         imageAlt="Tranquil retreat setting at GDAS Bali surrounded by jungle"
       />
       <Section>

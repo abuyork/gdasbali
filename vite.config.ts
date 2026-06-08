@@ -11,6 +11,27 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  // Proxy resort media so the browser requests same-origin /wp/* paths and never
+  // hits the WordPress host directly (which blocks cross-domain hotlinks).
+  // Netlify mirrors this rule in public/_redirects for production.
+  server: {
+    proxy: {
+      '/wp': {
+        target: 'https://gdasbali.com/wp-content/uploads',
+        changeOrigin: true,
+        rewrite: (p) => p.replace(/^\/wp/, ''),
+      },
+    },
+  },
+  preview: {
+    proxy: {
+      '/wp': {
+        target: 'https://gdasbali.com/wp-content/uploads',
+        changeOrigin: true,
+        rewrite: (p) => p.replace(/^\/wp/, ''),
+      },
+    },
+  },
   build: {
     // Split vendor chunks so first paint stays light.
     rollupOptions: {

@@ -34,7 +34,7 @@ export function FacilityPage() {
         subtitle={facility.summary}
         image={
           facility.gallery[0]?.src ??
-          'https://gdasbali.com/wp-content/uploads/2025/03/GdasLandscape-1024x681.jpg'
+          '/wp/2025/03/GdasLandscape-1024x681.jpg'
         }
         imageAlt={facility.gallery[0]?.alt ?? facility.title}
       />

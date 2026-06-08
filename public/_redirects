@@ -1,2 +1,6 @@
+# Proxy resort media through our own domain so the browser never hits the
+# WordPress host directly (it blocks cross-domain hotlinks). Server-side fetch.
+/wp/*  https://gdasbali.com/wp-content/uploads/:splat  200
+
 # SPA fallback so client-side routes resolve on direct hits / refresh (Netlify).
 /*    /index.html   200

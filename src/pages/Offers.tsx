@@ -11,7 +11,7 @@ import { Button } from '@/components/ui/Button'
 import { Reveal } from '@/components/ui/Reveal'
 import { NotFound } from './NotFound'
 
-const HERO = 'https://gdasbali.com/wp-content/uploads/2025/03/GdasLandscape-1024x681.jpg'
+const HERO = '/wp/2025/03/GdasLandscape-1024x681.jpg'
 
 export function Offers() {
   const { slug } = useParams()

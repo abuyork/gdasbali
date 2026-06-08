@@ -16,10 +16,10 @@ import { Reveal } from '@/components/ui/Reveal'
 import { BookingWidget } from '@/components/layout/BookingWidget'
 
 const HERO_IMG =
-  'https://gdasbali.com/wp-content/uploads/2025/03/GdasLandscape-1024x681.jpg'
+  '/wp/2025/03/GdasLandscape-1024x681.jpg'
 // Hero background video — same YouTube source as the original WP site.
 const HERO_VIDEO_ID = '2e4uvropX_o'
-const DINING_IMG = 'https://gdasbali.com/wp-content/uploads/2023/02/home-dining.jpg'
+const DINING_IMG = '/wp/2023/02/home-dining.jpg'
 
 const BENEFITS = [
   'Daily mindful movement (yoga and meditation)',

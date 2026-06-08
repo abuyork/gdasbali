@@ -22,7 +22,7 @@ export function Contact() {
         eyebrow="Get in Touch"
         title="Contact Us"
         subtitle="We would love to help you plan your wellness journey in Ubud."
-        image="https://gdasbali.com/wp-content/uploads/2025/03/GdasLandscape-1024x681.jpg"
+        image="/wp/2025/03/GdasLandscape-1024x681.jpg"
         imageAlt="GDAS Bali resort entrance amid tropical greenery in Mas, Ubud"
       />
       <Section>

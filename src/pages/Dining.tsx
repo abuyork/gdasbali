@@ -15,14 +15,14 @@ const CHEFS = [
   {
     role: 'Executive Chef',
     name: 'Chef Gede Susila Yadnya',
-    image: 'https://gdasbali.com/wp-content/uploads/2023/02/chef-Gede-Susila-Yadnya.jpg',
+    image: '/wp/2023/02/chef-Gede-Susila-Yadnya.jpg',
     alt: 'Portrait of Executive Chef Gede Susila Yadnya of Tangi Restaurant',
     body: 'Chef Gede Susila Yadnya hails from Singaraja region in North Bali. He boasts a rich culinary journey spanning over 25 years, taking him to Paris, Cairo, Seychelles, and back to his homeland, Indonesia. His illustrious career includes Banyan Tree Hotels and Resort Bintan Island, Angsana Resort & Spa Bintan Island, Hilton Resort & Spa Maldives, Lemuria Resort Praline Seychelles, Kamala Asian Bar and Dining Cairo, Lilin Indonesian Restaurant Potato Head Beach Club, and Clean Canteen Seminyak. Then, he decided to express himself in a new world of plant-based food by joining Gdas Bali Health and Wellness Resort.',
   },
   {
     role: 'Chef de Cuisine',
     name: 'Ida Bagus Putu Wisaskara',
-    image: 'https://gdasbali.com/wp-content/uploads/2023/02/chef-Ida-Bagus-Putu-Wisaskara.jpg',
+    image: '/wp/2023/02/chef-Ida-Bagus-Putu-Wisaskara.jpg',
     alt: 'Portrait of Chef de Cuisine Ida Bagus Putu Wisaskara of Tangi Restaurant',
     body: 'Ida Bagus Putu Wisaskara has six years of experience in the FnB industry and has been trained since he was young. For him, cooking is not simply serving good food but taking heart and energy to make an unforgettable taste of the food. Under Chef Gede’s guide, he’s ready to conquer the world of vegan cuisine.',
   },
@@ -43,7 +43,7 @@ export function Dining() {
         eyebrow="Dining"
         title="Tangi Restaurant"
         subtitle="World-class vegan soul food that nourishes both body and spirit, overlooking the lush jungle of Mas, Ubud."
-        image="https://gdasbali.com/wp-content/uploads/2023/02/tangi-restaurant-lumpia-matah.jpg"
+        image="/wp/2023/02/tangi-restaurant-lumpia-matah.jpg"
         imageAlt="Lumpia matah, a plant-based dish served at Tangi Restaurant, GDAS Bali"
       >
         <Button to={CHOPE} external variant="ondark">

@@ -8,8 +8,8 @@ export const organizationJsonLd = {
   name: BRAND.legalName,
   alternateName: BRAND.name,
   url: SITE_URL,
-  logo: BRAND.logo.src,
-  image: 'https://gdasbali.com/wp-content/uploads/2025/03/GdasLandscape-1024x681.jpg',
+  logo: SITE_URL + BRAND.logo.src,
+  image: SITE_URL + '/wp/2025/03/GdasLandscape-1024x681.jpg',
   description:
     'A holistic health and wellness resort in Ubud, Bali — yoga, plant-based vegan dining, a biohacking health suite, and signature healing retreats.',
   telephone: CONTACT.phone,

@@ -8,7 +8,7 @@ export const BRAND = {
   legalName: 'GDAS Bali Health and Wellness Resort',
   tagline: 'Holistic Wellness Resort in Ubud',
   logo: {
-    src: 'https://gdasbali.com/wp-content/uploads/2023/02/logo-GDAS-bali-big.png',
+    src: '/wp/2023/02/logo-GDAS-bali-big.png',
     alt: 'GDAS Bali logo',
   } satisfies Img,
 }
@@ -131,13 +131,13 @@ export const FOOTER_LINKS: NavLink[] = [
 export const TRUST_BADGES: { img: Img; href?: string }[] = [
   {
     img: {
-      src: 'https://gdasbali.com/wp-content/uploads/elementor/thumbs/logo-small-luxury-hotels-q4juhpwfrfjk8pusbicugr4fm7a9rrzbvwbtw72942.png',
+      src: '/wp/elementor/thumbs/logo-small-luxury-hotels-q4juhpwfrfjk8pusbicugr4fm7a9rrzbvwbtw72942.png',
       alt: 'Small Luxury Hotels of the World — member',
     },
   },
   {
     img: {
-      src: 'https://gdasbali.com/wp-content/uploads/elementor/thumbs/logo-smith-q4juhl79nyi4jpbm0hi8pf09tw21bvnit3sclgky90.png',
+      src: '/wp/elementor/thumbs/logo-smith-q4juhl79nyi4jpbm0hi8pf09tw21bvnit3sclgky90.png',
       alt: 'Mr & Mrs Smith — featured hotel',
     },
   },

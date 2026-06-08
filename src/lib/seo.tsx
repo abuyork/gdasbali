@@ -15,7 +15,7 @@ interface SeoProps {
 }
 
 const DEFAULT_OG_IMAGE =
-  'https://gdasbali.com/wp-content/uploads/2025/03/GdasLandscape-1024x681.jpg'
+  '/wp/2025/03/GdasLandscape-1024x681.jpg'
 
 /**
  * Per-page metadata. React 19 hoists <title>/<meta>/<link> rendered here into
@@ -33,6 +33,8 @@ export function Seo({
   const canonical = SITE_URL + (path ?? location.pathname)
   const fullTitle = title.includes('GDAS Bali') ? title : `${title} — GDAS Bali`
   const blocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : []
+  // Crawlers need absolute image URLs; proxied media is served from our origin.
+  const ogImage = image.startsWith('/') ? SITE_URL + image : image
 
   return (
     <>
@@ -47,13 +49,13 @@ export function Seo({
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonical} />
-      <meta property="og:image" content={image} />
+      <meta property="og:image" content={ogImage} />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
+      <meta name="twitter:image" content={ogImage} />
 
       {blocks.map((block, i) => (
         <script

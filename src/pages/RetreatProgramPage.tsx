@@ -30,7 +30,7 @@ export function RetreatProgramPage() {
         eyebrow="Signature Retreat"
         title={program.title}
         subtitle={program.intro}
-        image="https://gdasbali.com/wp-content/uploads/2025/03/GdasLandscape-1024x681.jpg"
+        image="/wp/2025/03/GdasLandscape-1024x681.jpg"
         imageAlt={`${program.title} signature retreat at GDAS Bali`}
       />
       <Section>

@@ -54,7 +54,7 @@ export function About() {
       <PageHero
         eyebrow="About GDAS Bali"
         title="Health leads to happiness."
-        image="https://gdasbali.com/wp-content/uploads/2025/03/GdasLandscape-1024x681.jpg"
+        image="/wp/2025/03/GdasLandscape-1024x681.jpg"
         imageAlt="The GDAS Bali landscape surrounded by jungle and rice terraces in Mas, Ubud"
       />
 

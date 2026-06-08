@@ -29,7 +29,7 @@ export function Experience() {
         eyebrow="Experience"
         title="Experiences"
         subtitle="Beyond the stay — weddings, bespoke concierge journeys and the sacred stillness of Nyepi."
-        image="https://gdasbali.com/wp-content/uploads/2025/03/GdasLandscape-1024x681.jpg"
+        image="/wp/2025/03/GdasLandscape-1024x681.jpg"
         imageAlt="Guests sharing a cultural experience at GDAS Bali in Ubud"
       />
       <Section>

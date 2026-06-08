@@ -69,47 +69,47 @@ export const ROOMS: Room[] = [
     ],
     gallery: [
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2023/02/grand-deluxe1.jpg',
+        src: '/wp/2023/02/grand-deluxe1.jpg',
         alt: 'Grand Deluxe super king bed with royal hand-carved wood headboard',
       },
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2023/02/grand-deluxe2.jpg',
+        src: '/wp/2023/02/grand-deluxe2.jpg',
         alt: 'Grand Deluxe bedroom with fragrant wood panelling and grey stone floor',
       },
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2023/02/grand-deluxe3.jpg',
+        src: '/wp/2023/02/grand-deluxe3.jpg',
         alt: 'Black stone bathtub set against sultry green marble vanity in the Grand Deluxe bathroom',
       },
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2023/02/grand-deluxe4.jpg',
+        src: '/wp/2023/02/grand-deluxe4.jpg',
         alt: 'Walk-in rainfall shower in the Grand Deluxe bathroom',
       },
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2023/02/grand-deluxe5.jpg',
+        src: '/wp/2023/02/grand-deluxe5.jpg',
         alt: 'Green marble vanity with lighted make-up mirror in the Grand Deluxe suite',
       },
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2023/02/grand-deluxe6.jpg',
+        src: '/wp/2023/02/grand-deluxe6.jpg',
         alt: 'Giant ottoman and geometric light fixtures in the Grand Deluxe room',
       },
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2023/02/grand-deluxe7.jpg',
+        src: '/wp/2023/02/grand-deluxe7.jpg',
         alt: 'Outdoor terrace of the Grand Deluxe overlooking the lush garden',
       },
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2023/02/grand-deluxe8.jpg',
+        src: '/wp/2023/02/grand-deluxe8.jpg',
         alt: 'Hand-carved Balinese ornaments decorating the Grand Deluxe interior',
       },
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2023/02/grand-deluxe9.jpg',
+        src: '/wp/2023/02/grand-deluxe9.jpg',
         alt: 'Grand Deluxe bedside table with lights control panel',
       },
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2023/02/grand-deluxe10.jpg',
+        src: '/wp/2023/02/grand-deluxe10.jpg',
         alt: 'Private balcony working desk in the Grand Deluxe room',
       },
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2023/02/grand-deluxe11.jpg',
+        src: '/wp/2023/02/grand-deluxe11.jpg',
         alt: 'Garden view from the Grand Deluxe terrace at GDAS Bali',
       },
     ],
@@ -122,39 +122,39 @@ export const ROOMS: Room[] = [
           'The classic Grand Deluxe paired with a private balcony for open-air relaxation above the gardens.',
         gallery: [
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/grand-deluxe-balcony-1.jpg',
+            src: '/wp/2023/11/grand-deluxe-balcony-1.jpg',
             alt: 'Grand Deluxe with Balcony super king bed and carved wood headboard',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/grand-deluxe-balcony-2.jpg',
+            src: '/wp/2023/11/grand-deluxe-balcony-2.jpg',
             alt: 'Private balcony of the Grand Deluxe overlooking the garden',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/grand-deluxe-balcony-3.jpg',
+            src: '/wp/2023/11/grand-deluxe-balcony-3.jpg',
             alt: 'Wood-panelled bedroom interior of the Grand Deluxe with Balcony',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/grand-deluxe-balcony-4.jpg',
+            src: '/wp/2023/11/grand-deluxe-balcony-4.jpg',
             alt: 'Black stone bathtub and green marble vanity in the Grand Deluxe with Balcony',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/grand-deluxe-balcony-5.jpg',
+            src: '/wp/2023/11/grand-deluxe-balcony-5.jpg',
             alt: 'Walk-in rain shower in the Grand Deluxe with Balcony bathroom',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/grand-deluxe-balcony-6.jpg',
+            src: '/wp/2023/11/grand-deluxe-balcony-6.jpg',
             alt: 'Balcony seating nook at the Grand Deluxe with Balcony',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/grand-deluxe-balcony-7.jpg',
+            src: '/wp/2023/11/grand-deluxe-balcony-7.jpg',
             alt: 'Geometric light fixtures and ottoman in the Grand Deluxe with Balcony',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/grand-deluxe-balcony-8.jpg',
+            src: '/wp/2023/11/grand-deluxe-balcony-8.jpg',
             alt: 'Garden outlook from the Grand Deluxe with Balcony',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/grand-deluxe-balcony-9.jpg',
+            src: '/wp/2023/11/grand-deluxe-balcony-9.jpg',
             alt: 'Detail of hand-carved Balinese woodwork in the Grand Deluxe with Balcony',
           },
         ],
@@ -167,31 +167,31 @@ export const ROOMS: Room[] = [
           'A Grand Deluxe with a terrace framing tranquil views over the resort gardens.',
         gallery: [
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/grand-deluxe-terrace-garden-view-1.jpg',
+            src: '/wp/2023/11/grand-deluxe-terrace-garden-view-1.jpg',
             alt: 'Grand Deluxe Terrace Garden View bedroom with super king bed',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/grand-deluxe-terrace-garden-view-2.jpg',
+            src: '/wp/2023/11/grand-deluxe-terrace-garden-view-2.jpg',
             alt: 'Terrace of the Grand Deluxe overlooking the lush garden',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/grand-deluxe-terrace-garden-view-3.jpg',
+            src: '/wp/2023/11/grand-deluxe-terrace-garden-view-3.jpg',
             alt: 'Green marble vanity and black stone bathtub in the Grand Deluxe Terrace Garden View',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/grand-deluxe-terrace-garden-view-4.jpg',
+            src: '/wp/2023/11/grand-deluxe-terrace-garden-view-4.jpg',
             alt: 'Walk-in rain shower in the Grand Deluxe Terrace Garden View bathroom',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/grand-deluxe-terrace-garden-view-5.jpg',
+            src: '/wp/2023/11/grand-deluxe-terrace-garden-view-5.jpg',
             alt: 'Wood-panelled bedroom of the Grand Deluxe Terrace Garden View',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/grand-deluxe-terrace-garden-view-6.jpg',
+            src: '/wp/2023/11/grand-deluxe-terrace-garden-view-6.jpg',
             alt: 'Outdoor terrace seating with garden view at the Grand Deluxe',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/grand-deluxe-terrace-garden-view-7.jpg',
+            src: '/wp/2023/11/grand-deluxe-terrace-garden-view-7.jpg',
             alt: 'Garden landscape seen from the Grand Deluxe Terrace Garden View',
           },
         ],
@@ -204,67 +204,67 @@ export const ROOMS: Room[] = [
           'A Grand Deluxe with a terrace opening onto sweeping views of the surrounding rice paddies.',
         gallery: [
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/grand-deluxe-terrace-paddy-15.jpg',
+            src: '/wp/2023/11/grand-deluxe-terrace-paddy-15.jpg',
             alt: 'Grand Deluxe Terrace Paddy View terrace overlooking the rice paddies',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/grand-deluxe-terrace-paddy-16.jpg',
+            src: '/wp/2023/11/grand-deluxe-terrace-paddy-16.jpg',
             alt: 'Rice paddy panorama from the Grand Deluxe Terrace Paddy View',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/grand-deluxe-terrace-paddy-3.jpg',
+            src: '/wp/2023/11/grand-deluxe-terrace-paddy-3.jpg',
             alt: 'Super king bed with carved wood headboard in the Grand Deluxe Terrace Paddy View',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/grand-deluxe-terrace-paddy-1.jpg',
+            src: '/wp/2023/11/grand-deluxe-terrace-paddy-1.jpg',
             alt: 'Wood-panelled bedroom of the Grand Deluxe Terrace Paddy View',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/grand-deluxe-terrace-paddy-2.jpg',
+            src: '/wp/2023/11/grand-deluxe-terrace-paddy-2.jpg',
             alt: 'Bedside table with lights control panel in the Grand Deluxe Terrace Paddy View',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/grand-deluxe-terrace-paddy-4.jpg',
+            src: '/wp/2023/11/grand-deluxe-terrace-paddy-4.jpg',
             alt: 'Black stone bathtub by the window in the Grand Deluxe Terrace Paddy View',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/grand-deluxe-terrace-paddy-5.jpg',
+            src: '/wp/2023/11/grand-deluxe-terrace-paddy-5.jpg',
             alt: 'Green marble vanity in the Grand Deluxe Terrace Paddy View bathroom',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/grand-deluxe-terrace-paddy-6.jpg',
+            src: '/wp/2023/11/grand-deluxe-terrace-paddy-6.jpg',
             alt: 'Walk-in rain shower in the Grand Deluxe Terrace Paddy View',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/grand-deluxe-terrace-paddy-7.jpg',
+            src: '/wp/2023/11/grand-deluxe-terrace-paddy-7.jpg',
             alt: 'Geometric light fixtures and ottoman in the Grand Deluxe Terrace Paddy View',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/grand-deluxe-terrace-paddy-8.jpg',
+            src: '/wp/2023/11/grand-deluxe-terrace-paddy-8.jpg',
             alt: 'Private balcony working desk in the Grand Deluxe Terrace Paddy View',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/grand-deluxe-terrace-paddy-9.jpg',
+            src: '/wp/2023/11/grand-deluxe-terrace-paddy-9.jpg',
             alt: 'Hand-carved Balinese ornaments in the Grand Deluxe Terrace Paddy View',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/grand-deluxe-terrace-paddy-14.jpg',
+            src: '/wp/2023/11/grand-deluxe-terrace-paddy-14.jpg',
             alt: 'Terrace seating nook facing the paddies at the Grand Deluxe',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/grand-deluxe-terrace-paddy-12.jpg',
+            src: '/wp/2023/11/grand-deluxe-terrace-paddy-12.jpg',
             alt: 'Morning light over the rice fields from the Grand Deluxe Terrace Paddy View',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/grand-deluxe-terrace-paddy-13.jpg',
+            src: '/wp/2023/11/grand-deluxe-terrace-paddy-13.jpg',
             alt: 'Lush greenery surrounding the Grand Deluxe Terrace Paddy View',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/grand-deluxe-terrace-paddy-11.jpg',
+            src: '/wp/2023/11/grand-deluxe-terrace-paddy-11.jpg',
             alt: 'Grand Deluxe Terrace Paddy View exterior amid the rice terraces',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/grand-deluxe-terrace-paddy-10.jpg',
+            src: '/wp/2023/11/grand-deluxe-terrace-paddy-10.jpg',
             alt: 'Jungle and paddy backdrop of the Grand Deluxe Terrace Paddy View',
           },
         ],
@@ -341,59 +341,59 @@ export const ROOMS: Room[] = [
     ],
     gallery: [
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2023/11/prestige-pool-villas-13.jpg',
+        src: '/wp/2023/11/prestige-pool-villas-13.jpg',
         alt: 'Prestige Pool Villa private pool with the glass-wood-stone villa beyond',
       },
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2023/11/prestige-pool-villas-14.jpg',
+        src: '/wp/2023/11/prestige-pool-villas-14.jpg',
         alt: 'Two-storey Prestige Pool Villa exterior amid the lush Kumbuh greenery',
       },
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2023/11/prestige-pool-villas-1.jpg',
+        src: '/wp/2023/11/prestige-pool-villas-1.jpg',
         alt: 'Semi-open living and dining area overlooking the Prestige Pool Villa pool',
       },
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2023/11/prestige-pool-villas-2.jpg',
+        src: '/wp/2023/11/prestige-pool-villas-2.jpg',
         alt: 'Floor-to-ceiling glass doors framing the pool at the Prestige Pool Villa',
       },
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2023/11/prestige-pool-villas-3.jpg',
+        src: '/wp/2023/11/prestige-pool-villas-3.jpg',
         alt: 'Fully-equipped kitchenette inside the Prestige Pool Villa',
       },
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2023/11/prestige-pool-villas-4.jpg',
+        src: '/wp/2023/11/prestige-pool-villas-4.jpg',
         alt: 'Upstairs super king bedroom under vaulted ceilings at the Prestige Pool Villa',
       },
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2023/11/prestige-pool-villas-5.jpg',
+        src: '/wp/2023/11/prestige-pool-villas-5.jpg',
         alt: 'Vaulted-ceiling bedroom with paddy views at the Prestige Pool Villa',
       },
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2023/11/prestige-pool-villas-6.jpg',
+        src: '/wp/2023/11/prestige-pool-villas-6.jpg',
         alt: 'Deep soaking tub and walk-in rain shower in the Prestige Pool Villa bathroom',
       },
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2023/11/prestige-pool-villas-7.jpg',
+        src: '/wp/2023/11/prestige-pool-villas-7.jpg',
         alt: 'Private balcony of the Prestige Pool Villa overlooking the jungle',
       },
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2023/11/prestige-pool-villas-8.jpg',
+        src: '/wp/2023/11/prestige-pool-villas-8.jpg',
         alt: 'Glass-wood-stone architecture inspired by the Javanese joglo at the Prestige Pool Villa',
       },
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2023/11/prestige-pool-villas-9.jpg',
+        src: '/wp/2023/11/prestige-pool-villas-9.jpg',
         alt: 'Living area with floor-to-ceiling windows at the Prestige Pool Villa',
       },
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2023/11/prestige-pool-villas-10.jpg',
+        src: '/wp/2023/11/prestige-pool-villas-10.jpg',
         alt: 'Pool deck and lounging area of the Prestige Pool Villa',
       },
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2023/11/prestige-pool-villas-11.jpg',
+        src: '/wp/2023/11/prestige-pool-villas-11.jpg',
         alt: 'Near 360-degree rice paddy views from the Prestige Pool Villa',
       },
       {
-        src: 'https://gdasbali.com/wp-content/uploads/2023/11/prestige-pool-villas-12.jpg',
+        src: '/wp/2023/11/prestige-pool-villas-12.jpg',
         alt: 'Prestige Pool Villa surrounded by rice paddies and jungle at GDAS Bali',
       },
     ],
@@ -406,47 +406,47 @@ export const ROOMS: Room[] = [
           'A Prestige Pool Villa whose private pool and terraces look out over the verdant resort gardens.',
         gallery: [
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/prestige-pool-villa-garden-view-1.jpg',
+            src: '/wp/2023/11/prestige-pool-villa-garden-view-1.jpg',
             alt: 'Prestige Pool Villa Garden View private pool beside the villa',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/prestige-pool-villa-garden-view-2.jpg',
+            src: '/wp/2023/11/prestige-pool-villa-garden-view-2.jpg',
             alt: 'Garden outlook from the Prestige Pool Villa Garden View',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/prestige-pool-villa-garden-view-3.jpg',
+            src: '/wp/2023/11/prestige-pool-villa-garden-view-3.jpg',
             alt: 'Semi-open living and dining area at the Prestige Pool Villa Garden View',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/prestige-pool-villa-garden-view-4.jpg',
+            src: '/wp/2023/11/prestige-pool-villa-garden-view-4.jpg',
             alt: 'Fully-equipped kitchenette in the Prestige Pool Villa Garden View',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/prestige-pool-villa-garden-view-5.jpg',
+            src: '/wp/2023/11/prestige-pool-villa-garden-view-5.jpg',
             alt: 'Upstairs super king bedroom at the Prestige Pool Villa Garden View',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/prestige-pool-villa-garden-view-6.jpg',
+            src: '/wp/2023/11/prestige-pool-villa-garden-view-6.jpg',
             alt: 'Vaulted ceiling over the bedroom at the Prestige Pool Villa Garden View',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/prestige-pool-villa-garden-view-7.jpg',
+            src: '/wp/2023/11/prestige-pool-villa-garden-view-7.jpg',
             alt: 'Deep soaking tub in the Prestige Pool Villa Garden View bathroom',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/prestige-pool-villa-garden-view-8.jpg',
+            src: '/wp/2023/11/prestige-pool-villa-garden-view-8.jpg',
             alt: 'Walk-in rain shower in the Prestige Pool Villa Garden View',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/prestige-pool-villa-garden-view-9.jpg',
+            src: '/wp/2023/11/prestige-pool-villa-garden-view-9.jpg',
             alt: 'Private balcony overlooking the garden at the Prestige Pool Villa Garden View',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/prestige-pool-villa-garden-view-10.jpg',
+            src: '/wp/2023/11/prestige-pool-villa-garden-view-10.jpg',
             alt: 'Floor-to-ceiling glass doors framing the garden at the Prestige Pool Villa Garden View',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/11/prestige-pool-villa-garden-view-11.jpg',
+            src: '/wp/2023/11/prestige-pool-villa-garden-view-11.jpg',
             alt: 'Glass-wood-stone exterior of the Prestige Pool Villa Garden View amid greenery',
           },
         ],
@@ -459,63 +459,63 @@ export const ROOMS: Room[] = [
           'A Prestige Pool Villa with near 360-degree views across the rice paddies and jungle from pool to vaulted bedroom.',
         gallery: [
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/02/prestige-pool-villa4.jpg',
+            src: '/wp/2023/02/prestige-pool-villa4.jpg',
             alt: 'Prestige Pool Villa Paddy View private pool overlooking the rice fields',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/02/prestige-pool-villa1.jpg',
+            src: '/wp/2023/02/prestige-pool-villa1.jpg',
             alt: 'Two-storey Prestige Pool Villa Paddy View set amid the rice paddies',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/02/prestige-pool-villa2.jpg',
+            src: '/wp/2023/02/prestige-pool-villa2.jpg',
             alt: 'Semi-open living and dining area at the Prestige Pool Villa Paddy View',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/02/prestige-pool-villa3.jpg',
+            src: '/wp/2023/02/prestige-pool-villa3.jpg',
             alt: 'Floor-to-ceiling glass doors framing the paddy view at the Prestige Pool Villa',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/02/prestige-pool-villa5.jpg',
+            src: '/wp/2023/02/prestige-pool-villa5.jpg',
             alt: 'Fully-equipped kitchenette in the Prestige Pool Villa Paddy View',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/02/prestige-pool-villa7.jpg',
+            src: '/wp/2023/02/prestige-pool-villa7.jpg',
             alt: 'Upstairs super king bedroom under vaulted ceilings at the Prestige Pool Villa Paddy View',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/02/prestige-pool-villa8.jpg',
+            src: '/wp/2023/02/prestige-pool-villa8.jpg',
             alt: 'Near 360-degree rice paddy views from the Prestige Pool Villa Paddy View bedroom',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/02/prestige-pool-villa9.jpg',
+            src: '/wp/2023/02/prestige-pool-villa9.jpg',
             alt: 'Deep soaking tub by the window at the Prestige Pool Villa Paddy View',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/02/prestige-pool-villa10.jpg',
+            src: '/wp/2023/02/prestige-pool-villa10.jpg',
             alt: 'Walk-in rain shower in the Prestige Pool Villa Paddy View bathroom',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/02/prestige-pool-villa11.jpg',
+            src: '/wp/2023/02/prestige-pool-villa11.jpg',
             alt: 'Private balcony facing the paddies at the Prestige Pool Villa Paddy View',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/02/prestige-pool-villa12.jpg',
+            src: '/wp/2023/02/prestige-pool-villa12.jpg',
             alt: 'Pool deck and lounging area at the Prestige Pool Villa Paddy View',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/02/prestige-pool-villa13.jpg',
+            src: '/wp/2023/02/prestige-pool-villa13.jpg',
             alt: 'Glass-wood-stone architecture of the Prestige Pool Villa Paddy View',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/02/prestige-pool-villa14.jpg',
+            src: '/wp/2023/02/prestige-pool-villa14.jpg',
             alt: 'Jungle and paddy backdrop of the Prestige Pool Villa Paddy View',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/02/prestige-pool-villa15.jpg',
+            src: '/wp/2023/02/prestige-pool-villa15.jpg',
             alt: 'Sunset over the rice paddies from the Prestige Pool Villa Paddy View',
           },
           {
-            src: 'https://gdasbali.com/wp-content/uploads/2023/02/prestige-pool-villa16.jpg',
+            src: '/wp/2023/02/prestige-pool-villa16.jpg',
             alt: 'Prestige Pool Villa Paddy View exterior amid the terraced rice fields',
           },
         ],
