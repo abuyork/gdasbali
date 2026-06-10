@@ -15,6 +15,23 @@ export interface NavLink {
   children?: NavLink[]
 }
 
+/** Featured card in the Experiences mega-menu. */
+export interface FeaturedLink {
+  label: string
+  to: string
+  external?: boolean
+  /** One-line descriptor — required so side-by-side cards read distinctly. */
+  descriptor: string
+  /** Icon key rendered by the Header. */
+  icon: 'biohacking' | 'eden'
+}
+
+/** Labelled column of links in the Experiences mega-menu. */
+export interface NavGroup {
+  heading: string
+  links: NavLink[]
+}
+
 export interface RoomVariant {
   slug: string
   title: string

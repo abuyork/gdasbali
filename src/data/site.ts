@@ -1,4 +1,4 @@
-import type { Img, NavLink } from './types'
+import type { FeaturedLink, Img, NavGroup, NavLink } from './types'
 
 /** Canonical production origin — update when the real domain is set. */
 export const SITE_URL = 'https://gdasbali.com'
@@ -41,81 +41,85 @@ export const SOCIAL: NavLink[] = [
   { label: 'TikTok', to: 'https://www.tiktok.com/@gdasbali', external: true },
 ]
 
-/** Primary navigation — mirrors the live site's menu tree with clean internal routes. */
-export const NAV: NavLink[] = [
-  { label: 'Home', to: '/' },
+/*
+ * Primary navigation — per the June 2026 Réntlyn restructure spec:
+ * 4 top-level items (Rooms · Experiences · Offers · Book now).
+ * The logo links home; there is no "Home" text tab.
+ */
+
+/** ROOMS — strictly room types (pool/lounge imagery lives on the room pages). */
+export const ROOMS_LINKS: NavLink[] = [
+  { label: 'Grand Deluxe', to: '/accommodations/grand-deluxe' },
+  { label: 'Prestige Pool Villa', to: '/accommodations/prestige-pool-villa' },
+]
+
+/** EXPERIENCES mega-menu — featured cards (best-selling wellness services). */
+export const EXPERIENCES_FEATURED: FeaturedLink[] = [
   {
-    label: 'Accommodations',
-    to: '/accommodations',
-    children: [
-      { label: 'Grand Deluxe', to: '/accommodations/grand-deluxe' },
-      {
-        label: 'Grand Deluxe with Balcony',
-        to: '/accommodations/grand-deluxe/with-balcony',
-      },
-      {
-        label: 'Grand Deluxe Terrace Garden View',
-        to: '/accommodations/grand-deluxe/terrace-garden-view',
-      },
-      {
-        label: 'Grand Deluxe Terrace Paddy View',
-        to: '/accommodations/grand-deluxe/terrace-paddy-view',
-      },
-      { label: 'Prestige Pool Villa', to: '/accommodations/prestige-pool-villa' },
-      {
-        label: 'Prestige Pool Villa Garden View',
-        to: '/accommodations/prestige-pool-villa/garden-view',
-      },
-      {
-        label: 'Prestige Pool Villa Paddy View',
-        to: '/accommodations/prestige-pool-villa/paddy-view',
-      },
+    label: 'Biohacking Lab', // renamed from "Health Suite"; URL unchanged
+    to: '/health-suite',
+    descriptor: 'Cryotherapy, red light, IV & stem cell therapy',
+    icon: 'biohacking',
+  },
+  {
+    label: 'The Bali Eden',
+    to: 'https://thebalieden.com/',
+    external: true,
+    descriptor: 'Spa, gym & wellness centre',
+    icon: 'eden',
+  },
+]
+
+/** EXPERIENCES mega-menu — four labelled category columns. */
+export const EXPERIENCES_GROUPS: NavGroup[] = [
+  {
+    heading: 'Wellness',
+    links: [
+      { label: 'Wellness facilities', to: '/facilities/wellness-facilities' },
+      { label: 'Yoga shala', to: '/facilities/yoga-shala' },
+      { label: 'Hot yoga studio', to: '/facilities/hot-yoga-studio' },
     ],
   },
   {
-    label: 'Facilities',
-    to: '/facilities',
-    children: [
-      { label: 'Swimming Pool', to: '/facilities/swimming-pool' },
-      { label: 'The Garden Lounge', to: '/facilities/garden-lounge' },
-      { label: 'Library', to: '/facilities/library' },
-      { label: 'Yoga Shala', to: '/facilities/yoga-shala' },
-      { label: 'Hot Yoga Studio', to: '/facilities/hot-yoga-studio' },
-      { label: 'Gift Shop', to: '/facilities/gift-shop' },
-      { label: 'Wellness Facilities', to: '/facilities/wellness-facilities' },
+    heading: 'Retreats',
+    links: [
+      { label: 'Signature retreat', to: '/retreat/signature' },
+      {
+        label: 'Journey of self restoration',
+        to: '/retreat/signature/journey-of-self-restoration',
+      },
+      { label: "Tarzan's Jungle Retreat", to: '/retreat/tarzans-jungle-retreat' },
+      { label: 'Host your retreat', to: '/retreat/host-your-retreat' },
     ],
   },
-  { label: 'The Bali Eden', to: 'https://thebalieden.com/', external: true },
-  { label: 'Offers', to: '/offers' },
   {
-    label: 'Experience',
-    to: '/experience',
-    children: [
+    heading: 'Dining',
+    links: [
+      { label: 'Tangi restaurant', to: '/dining' },
+      // Spice of Eden has no dedicated page yet — lives as a section on /dining.
+      { label: 'Spice of Eden', to: '/dining#spice-of-eden' },
+    ],
+  },
+  {
+    heading: 'Occasions',
+    links: [
       { label: 'Wedding', to: '/experience/wedding' },
-      { label: 'VIP Concierge', to: '/experience/vip-concierge' },
+      { label: 'VIP concierge', to: '/experience/vip-concierge' },
       { label: 'Nyepi – Balinese New Year', to: '/experience/nyepi' },
     ],
   },
-  {
-    label: 'Retreat',
-    to: '/retreat/signature',
-    children: [
-      { label: 'Signature Retreat', to: '/retreat/signature' },
-      { label: 'Host Your Retreat', to: '/retreat/host-your-retreat' },
-      { label: "Tarzan's Jungle Retreat", to: '/retreat/tarzans-jungle-retreat' },
-      {
-        label: 'Journey of Self Restoration',
-        to: '/retreat/signature/journey-of-self-restoration',
-      },
-    ],
-  },
-  { label: 'Health Suite', to: '/health-suite' },
-  { label: 'Dining', to: '/dining' },
 ]
 
-/** Footer "More Information" column. */
+/** OFFERS — single highlighted conversion link (not a dropdown). */
+export const OFFERS_LINK: NavLink = { label: 'Offers', to: '/offers' }
+
+/** Footer "More Information" column. Pages demoted from the main nav stay live here. */
 export const FOOTER_LINKS: NavLink[] = [
   { label: 'About Us', to: '/about-us' },
+  { label: 'Swimming Pool', to: '/facilities/swimming-pool' },
+  { label: 'The Garden Lounge', to: '/facilities/garden-lounge' },
+  { label: 'Library', to: '/facilities/library' },
+  { label: 'Gift Shop', to: '/facilities/gift-shop' },
   { label: 'Events', to: '/events' },
   { label: 'Activities', to: '/activities' },
   { label: 'Gallery', to: '/gallery' },

@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom'
 import { Seo } from '@/lib/seo'
 import { breadcrumbJsonLd } from '@/lib/structuredData'
 import { ROOM_BY_SLUG } from '@/data/rooms'
+import { FACILITY_BY_SLUG } from '@/data/facilities'
 import { PageHero } from '@/components/ui/PageHero'
 import { Section } from '@/components/ui/Section'
 import { Container } from '@/components/ui/Container'
@@ -116,6 +117,46 @@ export function RoomPage({ slug }: { slug: string }) {
         <Container>
           <h2 className="mb-10 font-display text-h2">Gallery</h2>
           <Gallery images={gallery} />
+        </Container>
+      </Section>
+
+      {/* Pool & lounge live here as stay content (not nav links) per the nav spec */}
+      <Section tone="surface">
+        <Container>
+          <h2 className="mb-10 font-display text-h2">During your stay</h2>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {['swimming-pool', 'garden-lounge'].map((slug) => {
+              const facility = FACILITY_BY_SLUG[slug]
+              if (!facility) return null
+              return (
+                <Link
+                  key={slug}
+                  to={`/facilities/${slug}`}
+                  className="group block border border-line bg-canvas"
+                >
+                  {facility.gallery[0] && (
+                    <div className="overflow-hidden">
+                      <img
+                        src={facility.gallery[0].src}
+                        alt={facility.gallery[0].alt}
+                        loading="lazy"
+                        className="aspect-[16/9] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                      />
+                    </div>
+                  )}
+                  <div className="p-7">
+                    <h3 className="font-display text-h3">{facility.title}</h3>
+                    <p className="mt-2 line-clamp-2 text-sm text-ink-soft">
+                      {facility.summary}
+                    </p>
+                    <span className="link-underline mt-4 inline-block text-sm text-clay">
+                      Discover
+                    </span>
+                  </div>
+                </Link>
+              )
+            })}
+          </div>
         </Container>
       </Section>
     </>

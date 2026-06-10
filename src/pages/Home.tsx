@@ -79,8 +79,8 @@ export function Home() {
         <Container>
           <Reveal>
             <SectionHeading
-              eyebrow="Biohacking"
-              title="Health Suite"
+              eyebrow="The health suite"
+              title="Biohacking Lab"
               lead="Science-backed therapies to reduce inflammation, speed recovery, and restore vitality."
             />
           </Reveal>
@@ -105,7 +105,7 @@ export function Home() {
             ))}
           </ul>
           <div className="mt-10">
-            <Button to="/health-suite">Explore the Health Suite</Button>
+            <Button to="/health-suite">Explore the Biohacking Lab</Button>
           </div>
         </Container>
       </Section>

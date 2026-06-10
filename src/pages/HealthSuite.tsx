@@ -17,12 +17,12 @@ export function HealthSuite() {
         {...seo}
         jsonLd={breadcrumbJsonLd([
           { name: 'Home', path: '/' },
-          { name: 'Health Suite', path: '/health-suite' },
+          { name: 'Biohacking Lab', path: '/health-suite' },
         ])}
       />
       <PageHero
-        eyebrow="Biohacking"
-        title="Health Suite"
+        eyebrow="The health suite"
+        title="Biohacking Lab"
         subtitle={HEALTH_SUITE_INTRO}
         image={TREATMENTS[0].image.src}
         imageAlt={TREATMENTS[0].image.alt}

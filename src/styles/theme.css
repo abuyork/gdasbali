@@ -89,6 +89,11 @@
     -webkit-text-size-adjust: 100%;
   }
 
+  /* Anchored sections land below the fixed header */
+  [id] {
+    scroll-margin-top: 6rem;
+  }
+
   body {
     margin: 0;
     background-color: var(--color-canvas);
@@ -259,5 +264,16 @@
   .btn-ondark:hover {
     background-color: var(--color-white);
     color: var(--color-ink);
+  }
+  /* Primary booking CTA — solid clay fill; the brightest element in the nav bar */
+  .btn-clay {
+    background-color: var(--color-clay);
+    border-color: var(--color-clay);
+    color: var(--color-white);
+  }
+  .btn-clay:hover {
+    background-color: var(--color-clay-deep);
+    border-color: var(--color-clay-deep);
+    color: var(--color-white);
   }
 }

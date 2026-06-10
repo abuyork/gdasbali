@@ -101,6 +101,23 @@ export function Dining() {
         </Container>
       </Section>
 
+      {/* Spice of Eden — nav links here (/dining#spice-of-eden) until it gets its own page */}
+      <Section id="spice-of-eden" tone="jungle" spacing="tight">
+        <Container width="narrow" className="text-center">
+          <p className="eyebrow mb-4">Coming to GDAS Bali</p>
+          <h2 className="font-display text-h2">Spice of Eden</h2>
+          <p className="mx-auto mt-5 max-w-xl text-canvas/85 text-pretty">
+            A new dining experience is taking shape at the resort. Menu and opening details
+            will be announced soon — contact our team to be the first to know.
+          </p>
+          <div className="mt-8">
+            <Button to="mailto:hello@gdasbali.com" external variant="ondark">
+              Ask About Spice of Eden
+            </Button>
+          </div>
+        </Container>
+      </Section>
+
       <Section>
         <Container>
           <h2 className="mb-12 text-center font-display text-h2">Meet Our Chefs</h2>

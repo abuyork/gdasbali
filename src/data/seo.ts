@@ -32,9 +32,9 @@ export const SEO: Record<string, SeoMeta> = {
       'Tangi Restaurant serves world-class vegan soul food overlooking the jungle of Mas, Ubud — locally sourced, plant-based, and rooted in Balinese tradition.',
   },
   '/health-suite': {
-    title: 'Health Suite — Biohacking & Recovery Therapies',
+    title: 'Biohacking Lab — Recovery & Longevity Therapies',
     description:
-      'Cryotherapy, red light, salt therapy, Live O2, colonic hydrotherapy, stem cell and IV drips — science-backed biohacking at the GDAS Bali Health Suite.',
+      'Cryotherapy, red light, salt therapy, Live O2, colonic hydrotherapy, stem cell and IV drips — science-backed therapies at the GDAS Bali Biohacking Lab.',
   },
   '/offers': {
     title: 'Offers & Wellness Packages',
