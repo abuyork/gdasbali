@@ -38,7 +38,11 @@ export function Home() {
       <PageHero
         size="full"
         eyebrow="Welcome to"
-        title="GDAS Bali"
+        title={
+          <>
+            GDAS <em className="font-light">Bali</em>
+          </>
+        }
         subtitle="A health and wellness resort in the heart of Bali's cultural and spiritual hub, Ubud."
         image={HERO_IMG}
         imageAlt="Aerial view of GDAS Bali resort set among the jungle and rice paddies of Mas, Ubud"
@@ -56,8 +60,8 @@ export function Home() {
         <Container width="narrow" className="text-center">
           <Reveal>
             <Eyebrow className="mb-5">A Sanctuary of Wellness</Eyebrow>
-            <p className="font-display text-h3 md:text-h2 leading-snug text-balance">
-              Learn to let go and release in our sanctuary of wellness and peace.
+            <p className="font-display text-h3 md:text-h2 leading-snug text-balance text-ink">
+              Learn to <em>let go</em> and release in our sanctuary of wellness and peace.
             </p>
             <p className="mt-8 text-ink-soft leading-relaxed text-pretty">
               Embrace the area's healing energies and vibrate at higher frequencies for the

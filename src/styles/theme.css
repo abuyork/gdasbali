@@ -1,43 +1,50 @@
 @import 'tailwindcss';
 
 /*
-  GDAS Bali — design tokens
-  Editorial / quiet-luxury language adapted from the Ashton Bespoke reference:
-  warm parchment canvas, ink text, a single deep botanical accent (jungle green),
-  a warm clay secondary, letterspaced serif display, hairline borders, no shadows.
+  GDAS Bali — design tokens — DESIGN 1 ("Oura" reference)
+  Warm oatmeal atelier under soft daylight: cream canvas, soft-charcoal text,
+  a single muted sage accent, high-contrast editorial serif (Fraunces standing
+  in for Editorial New) with negative tracking and italic flourishes, pill
+  buttons, 8px rounded cards, hairline #ececec borders. Elevation by surface
+  contrast, not shadows.
+
+  Semantic token names are unchanged from the base theme so components keep
+  working: canvas/surface/ink/ink-soft/jungle/clay/line.
 */
 @theme {
   /* ---- Colors ---- */
-  --color-canvas: #ece6da; /* warm parchment — dominant page surface */
-  --color-surface: #f5f1e9; /* elevated/lighter surface */
-  --color-ink: #2b2823; /* primary text, hairlines */
-  --color-ink-soft: #5c574e; /* secondary text, captions */
-  --color-jungle: #2e3a2c; /* deep botanical accent — dark bands & footer */
-  --color-jungle-soft: #3c4a38;
-  --color-clay: #a06a4b; /* warm secondary accent — CTAs, links */
-  --color-clay-deep: #855838;
-  --color-line: #cfc7b8; /* hairline border on canvas */
+  --color-canvas: #f7f1e8; /* cream — warm paper-white page canvas */
+  --color-surface: #fefaef; /* bone white — elevated panels & cards */
+  --color-ink: #222428; /* onyx — headings, strong text, dark fills */
+  --color-ink-soft: #4a4741; /* soft charcoal — body copy, secondary text */
+  --color-jungle: #222428; /* dark band/footer surface (onyx) */
+  --color-jungle-soft: #33363b;
+  --color-clay: #5b6550; /* sage whisper — the sole chromatic accent */
+  --color-clay-deep: #49523f;
+  --color-line: #ececec; /* stone hairline borders */
   --color-white: #ffffff;
 
   /* ---- Typography ---- */
-  --font-serif: 'Cormorant Garamond', ui-serif, Georgia, 'Times New Roman', serif;
+  --font-serif: 'Fraunces', ui-serif, Georgia, 'Times New Roman', serif;
   --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
-  /* Editorial type scale (serif display set wide, like the reference) */
-  --text-eyebrow: 0.8125rem; /* 13px — tracked uppercase labels */
+  /* Editorial type scale — airy display, breathable body (Oura ratios) */
+  --text-eyebrow: 0.8125rem; /* 13px — tracked uppercase micro-labels */
   --text-body: 1.0625rem; /* 17px */
   --text-lead: 1.25rem; /* 20px */
   --text-h3: 1.75rem; /* 28px */
   --text-h2: 2.5rem; /* 40px */
   --text-h1: 3.5rem; /* 56px */
-  --text-display: 4.5rem; /* 72px */
+  --text-display: 5rem; /* 80px — Oura display scale */
 
   /* ---- Spacing rhythm ---- */
-  --spacing-section: 7.5rem; /* 120px vertical section rhythm */
+  --spacing-section: 7.5rem;
 
-  /* ---- Radius (sharp/editorial) ---- */
-  --radius-sm: 2px;
-  --radius-md: 4px;
+  /* ---- Radius (soft/rounded geometry) ---- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-card: 8px;
+  --radius-input: 12px;
 
   /* ---- Container ---- */
   --container-prose: 46rem;
@@ -97,28 +104,31 @@
   body {
     margin: 0;
     background-color: var(--color-canvas);
-    color: var(--color-ink);
+    color: var(--color-ink-soft);
     font-family: var(--font-sans);
     font-size: var(--text-body);
-    line-height: 1.65;
+    line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
 
+  /* Light editorial serif headings, high contrast, negative tracking */
   h1,
   h2,
   h3,
   h4 {
     font-family: var(--font-serif);
-    font-weight: 500;
+    font-weight: 300;
     line-height: 1.1;
+    color: var(--color-ink);
     margin: 0;
   }
 
-  /* Wide tracking on serif display — the editorial signature */
+  /* Display serif — Oura signature: light weight + negative tracking */
   .font-display {
     font-family: var(--font-serif);
-    letter-spacing: 0.02em;
+    font-weight: 300;
+    letter-spacing: -0.025em;
   }
 
   a {
@@ -132,9 +142,15 @@
     height: auto;
   }
 
-  /* Visible focus ring for keyboard users (a11y) */
+  /* Inputs carry the 12px Oura input radius */
+  input,
+  textarea,
+  select {
+    border-radius: var(--radius-input);
+  }
+
   :focus-visible {
-    outline: 2px solid var(--color-clay);
+    outline: 2px solid var(--color-ink);
     outline-offset: 2px;
   }
 
@@ -157,12 +173,12 @@
 }
 
 @layer components {
-  /* Tracked uppercase eyebrow label (editorial chapter mark) */
+  /* Tracked uppercase micro-label (Oura: refined, modest tracking) */
   .eyebrow {
     font-family: var(--font-sans);
     font-size: var(--text-eyebrow);
     font-weight: 500;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--color-clay);
   }
@@ -192,6 +208,17 @@
   /* Route-change fade — keyed on pathname so each navigation replays it */
   .page-enter {
     animation: var(--animate-fade-in);
+  }
+
+  /* Soft rounded geometry on cards & framed images without touching every
+     component: anything that pairs a border with a card surface gets the
+     8px Oura card radius. Hairline dividers (border-b/-y) are unaffected. */
+  .border.bg-surface,
+  .border.bg-canvas,
+  .border-2.bg-surface,
+  figure.border {
+    border-radius: var(--radius-card);
+    overflow: hidden;
   }
 
   /* Full-bleed background video (YouTube iframe scaled to cover the hero) */
@@ -225,7 +252,13 @@
     opacity: 0.65;
   }
 
-  /* Primary action — clay outline, editorial (no fill, no shadow) */
+  /*
+    Buttons — Oura pill system:
+    .btn        ghost pill (1px charcoal border, no fill)
+    .btn-solid  dark onyx pill (primary CTA)
+    .btn-clay   dark onyx pill (booking CTA — same primary treatment)
+    .btn-ondark white ghost pill for dark/hero surfaces
+  */
   .btn {
     display: inline-flex;
     align-items: center;
@@ -233,28 +266,32 @@
     font-family: var(--font-sans);
     font-size: var(--text-eyebrow);
     font-weight: 500;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.025em;
     text-transform: uppercase;
     padding: 0.875rem 1.75rem;
-    border: 1px solid var(--color-clay);
-    color: var(--color-clay);
-    border-radius: var(--radius-md);
+    border: 1px solid var(--color-ink-soft);
+    color: var(--color-ink-soft);
+    border-radius: 9999px;
     transition:
       background-color 0.25s ease,
+      border-color 0.25s ease,
       color 0.25s ease;
   }
   .btn:hover {
-    background-color: var(--color-clay);
+    background-color: var(--color-ink);
+    border-color: var(--color-ink);
     color: var(--color-white);
   }
-  .btn-solid {
-    background-color: var(--color-jungle);
-    border-color: var(--color-jungle);
+  .btn-solid,
+  .btn-clay {
+    background-color: var(--color-ink);
+    border-color: var(--color-ink);
     color: var(--color-white);
   }
-  .btn-solid:hover {
-    background-color: var(--color-jungle-soft);
-    border-color: var(--color-jungle-soft);
+  .btn-solid:hover,
+  .btn-clay:hover {
+    background-color: #000000;
+    border-color: #000000;
     color: var(--color-white);
   }
   .btn-ondark {
@@ -263,17 +300,7 @@
   }
   .btn-ondark:hover {
     background-color: var(--color-white);
+    border-color: var(--color-white);
     color: var(--color-ink);
-  }
-  /* Primary booking CTA — solid clay fill; the brightest element in the nav bar */
-  .btn-clay {
-    background-color: var(--color-clay);
-    border-color: var(--color-clay);
-    color: var(--color-white);
-  }
-  .btn-clay:hover {
-    background-color: var(--color-clay-deep);
-    border-color: var(--color-clay-deep);
-    color: var(--color-white);
   }
 }
