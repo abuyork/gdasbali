@@ -1,50 +1,51 @@
 @import 'tailwindcss';
 
 /*
-  GDAS Bali — design tokens — DESIGN 1 ("Oura" reference)
-  Warm oatmeal atelier under soft daylight: cream canvas, soft-charcoal text,
-  a single muted sage accent, high-contrast editorial serif (Fraunces standing
-  in for Editorial New) with negative tracking and italic flourishes, pill
-  buttons, 8px rounded cards, hairline #ececec borders. Elevation by surface
-  contrast, not shadows.
+  GDAS Bali — design tokens — DESIGN 3 ("Evermade" reference)
+  Editorial punk on cream paper: warm cream canvas, blush card surfaces,
+  wine-maroon dark bands & headings, one hot-pink accent used ONLY as border
+  and text (never a filled background). Three-tier type system — Instrument
+  Serif display, DM Mono tracked-uppercase labels, Manrope body. Everything
+  interactive is a pill (9999px); cards are 8px; no shadows anywhere.
 
   Semantic token names are unchanged from the base theme so components keep
   working: canvas/surface/ink/ink-soft/jungle/clay/line.
 */
 @theme {
   /* ---- Colors ---- */
-  --color-canvas: #f7f1e8; /* cream — warm paper-white page canvas */
-  --color-surface: #fefaef; /* bone white — elevated panels & cards */
-  --color-ink: #222428; /* onyx — headings, strong text, dark fills */
-  --color-ink-soft: #4a4741; /* soft charcoal — body copy, secondary text */
-  --color-jungle: #222428; /* dark band/footer surface (onyx) */
-  --color-jungle-soft: #33363b;
-  --color-clay: #5b6550; /* sage whisper — the sole chromatic accent */
-  --color-clay-deep: #49523f;
-  --color-line: #ececec; /* stone hairline borders */
+  --color-canvas: #fef0e6; /* cream paper — page canvas */
+  --color-surface: #ffdce2; /* blush card — lifted panels & cards */
+  --color-ink: #2d070b; /* wine maroon — headings & strong text */
+  --color-ink-soft: #5c4045; /* softened maroon — body & secondary text */
+  --color-jungle: #2d070b; /* maroon stage — dark bands & footer */
+  --color-jungle-soft: #45151c;
+  --color-clay: #ff0389; /* hot pink — accent as border/text ONLY */
+  --color-clay-deep: #d10070;
+  --color-line: #ffc7de; /* soft pink — hairlines & gentle card edges */
   --color-white: #ffffff;
 
-  /* ---- Typography ---- */
-  --font-serif: 'Fraunces', ui-serif, Georgia, 'Times New Roman', serif;
-  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  /* ---- Typography (three-tier system) ---- */
+  --font-serif: 'Instrument Serif', ui-serif, Georgia, 'Times New Roman', serif;
+  --font-sans: 'Manrope', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'DM Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
-  /* Editorial type scale — airy display, breathable body (Oura ratios) */
-  --text-eyebrow: 0.8125rem; /* 13px — tracked uppercase micro-labels */
+  /* Type scale — magazine display, compact technical labels */
+  --text-eyebrow: 0.75rem; /* 12px — DM Mono tracked uppercase */
   --text-body: 1.0625rem; /* 17px */
   --text-lead: 1.25rem; /* 20px */
   --text-h3: 1.75rem; /* 28px */
   --text-h2: 2.5rem; /* 40px */
   --text-h1: 3.5rem; /* 56px */
-  --text-display: 5rem; /* 80px — Oura display scale */
+  --text-display: 5.5rem; /* 88px — toward Evermade's oversized display */
 
   /* ---- Spacing rhythm ---- */
   --spacing-section: 7.5rem;
 
-  /* ---- Radius (soft/rounded geometry) ---- */
-  --radius-sm: 4px;
+  /* ---- Radius (pills + soft cards) ---- */
+  --radius-sm: 3px;
   --radius-md: 8px;
   --radius-card: 8px;
-  --radius-input: 12px;
+  --radius-input: 9999px;
 
   /* ---- Container ---- */
   --container-prose: 46rem;
@@ -112,23 +113,22 @@
     text-rendering: optimizeLegibility;
   }
 
-  /* Light editorial serif headings, high contrast, negative tracking */
+  /* Instrument Serif headings — magazine gravitas, single 400 weight */
   h1,
   h2,
   h3,
   h4 {
     font-family: var(--font-serif);
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.1;
     color: var(--color-ink);
     margin: 0;
   }
 
-  /* Display serif — Oura signature: light weight + negative tracking */
   .font-display {
     font-family: var(--font-serif);
-    font-weight: 300;
-    letter-spacing: -0.025em;
+    font-weight: 400;
+    letter-spacing: -0.01em;
   }
 
   a {
@@ -142,15 +142,18 @@
     height: auto;
   }
 
-  /* Inputs carry the 12px Oura input radius */
+  /* Pill inputs (Evermade: inputs are 9999px) */
   input,
   textarea,
   select {
     border-radius: var(--radius-input);
   }
+  textarea {
+    border-radius: 16px; /* multiline can't be a pill — soften instead */
+  }
 
   :focus-visible {
-    outline: 2px solid var(--color-ink);
+    outline: 2px solid var(--color-clay);
     outline-offset: 2px;
   }
 
@@ -173,14 +176,17 @@
 }
 
 @layer components {
-  /* Tracked uppercase micro-label (Oura: refined, modest tracking) */
+  /* DM Mono tracked-uppercase eyebrow with the Evermade dot prefix */
   .eyebrow {
-    font-family: var(--font-sans);
+    font-family: var(--font-mono);
     font-size: var(--text-eyebrow);
     font-weight: 500;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
     color: var(--color-clay);
+  }
+  .eyebrow::before {
+    content: '· ';
   }
 
   /* Navigation link with an underline that grows from the left on hover/focus */
@@ -210,9 +216,9 @@
     animation: var(--animate-fade-in);
   }
 
-  /* Soft rounded geometry on cards & framed images without touching every
-     component: anything that pairs a border with a card surface gets the
-     8px Oura card radius. Hairline dividers (border-b/-y) are unaffected. */
+  /* 8px Evermade card radius on bordered card surfaces & framed images,
+     applied globally so individual components stay untouched. Hairline
+     dividers (border-b/-y) are unaffected. */
   .border.bg-surface,
   .border.bg-canvas,
   .border-2.bg-surface,
@@ -242,7 +248,7 @@
     pointer-events: none;
   }
 
-  /* Hairline-underlined inline link, no color shift on hover */
+  /* Inline link — pink text + pink underline (flat, no pill) */
   .link-underline {
     border-bottom: 1px solid currentColor;
     padding-bottom: 1px;
@@ -253,24 +259,24 @@
   }
 
   /*
-    Buttons — Oura pill system:
-    .btn        ghost pill (1px charcoal border, no fill)
-    .btn-solid  dark onyx pill (primary CTA)
-    .btn-clay   dark onyx pill (booking CTA — same primary treatment)
-    .btn-ondark white ghost pill for dark/hero surfaces
+    Buttons — Evermade pill system (hot pink is NEVER a filled background):
+    .btn        pink outline pill, pink DM Mono text — the signature action
+    .btn-solid  wine-maroon filled pill, white text — dark primary
+    .btn-clay   wine-maroon filled pill (booking CTA — high-contrast solid)
+    .btn-ondark white outline pill for dark/hero surfaces
   */
   .btn {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    font-family: var(--font-sans);
-    font-size: var(--text-eyebrow);
-    font-weight: 500;
-    letter-spacing: 0.025em;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
-    padding: 0.875rem 1.75rem;
-    border: 1px solid var(--color-ink-soft);
-    color: var(--color-ink-soft);
+    padding: 0.875rem 1.5rem;
+    border: 1px solid var(--color-clay);
+    color: var(--color-clay);
     border-radius: 9999px;
     transition:
       background-color 0.25s ease,
@@ -278,23 +284,24 @@
       color 0.25s ease;
   }
   .btn:hover {
-    background-color: var(--color-ink);
-    border-color: var(--color-ink);
+    background-color: var(--color-jungle);
+    border-color: var(--color-jungle);
     color: var(--color-white);
   }
   .btn-solid,
   .btn-clay {
-    background-color: var(--color-ink);
-    border-color: var(--color-ink);
+    background-color: var(--color-jungle);
+    border-color: var(--color-jungle);
     color: var(--color-white);
   }
   .btn-solid:hover,
   .btn-clay:hover {
-    background-color: #000000;
-    border-color: #000000;
+    background-color: var(--color-jungle-soft);
+    border-color: var(--color-jungle-soft);
     color: var(--color-white);
   }
   .btn-ondark {
+    background-color: transparent;
     border-color: var(--color-white);
     color: var(--color-white);
   }

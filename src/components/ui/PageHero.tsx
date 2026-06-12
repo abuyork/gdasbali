@@ -67,21 +67,23 @@ export function PageHero({
         />
       )}
 
-      {/* Light warm scrim — Oura lets the photograph breathe */}
+      {/* Dramatic maroon-tinted scrim (ink = wine maroon in this design) */}
       <div
-        className="absolute inset-0 bg-gradient-to-t from-ink/55 via-ink/20 to-ink/25"
+        className="absolute inset-0 bg-gradient-to-b from-ink/60 via-ink/35 to-ink/65"
         aria-hidden="true"
       />
-      {/* Left-aligned editorial headline (Oura layout) */}
-      <div className="animate-fade-up relative z-10 mx-auto w-full max-w-[88rem] px-6 pt-24 pb-12 text-left text-white md:px-10">
-        {eyebrow && <Eyebrow className="mb-5 text-white/80">{eyebrow}</Eyebrow>}
-        <h1 className="font-display max-w-3xl text-h1 md:text-display leading-[1.02] text-balance text-white">
+      {/* Centered statement headline (Evermade layout) */}
+      <div className="animate-fade-up relative z-10 mx-auto max-w-4xl px-6 pt-24 pb-12 text-center text-white">
+        {eyebrow && <Eyebrow className="mb-5 text-white/85">{eyebrow}</Eyebrow>}
+        <h1 className="font-display text-h1 md:text-display leading-[1.05] text-balance text-white">
           {title}
         </h1>
         {subtitle && (
-          <p className="mt-6 max-w-xl text-lead text-white/85 text-pretty">{subtitle}</p>
+          <p className="mx-auto mt-6 max-w-2xl text-lead text-white/85 text-pretty">
+            {subtitle}
+          </p>
         )}
-        {children && <div className="mt-10 flex gap-4">{children}</div>}
+        {children && <div className="mt-10 flex justify-center gap-4">{children}</div>}
       </div>
     </header>
   )
