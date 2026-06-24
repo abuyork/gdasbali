@@ -1,89 +1,182 @@
 @import 'tailwindcss';
 
 /*
-  GDAS Bali — design tokens — DESIGN 3 ("Evermade" reference)
-  Editorial punk on cream paper: warm cream canvas, blush card surfaces,
-  wine-maroon dark bands & headings, one hot-pink accent used ONLY as border
-  and text (never a filled background). Three-tier type system — Instrument
-  Serif display, DM Mono tracked-uppercase labels, Manrope body. Everything
-  interactive is a pill (9999px); cards are 8px; no shadows anywhere.
+  GDAS Bali — DEMO SWITCHER build.
+  All three landing-page designs in one stylesheet, switched at runtime via the
+  `data-design` attribute on <html> (set by the floating DesignSwitcher).
 
-  Semantic token names are unchanged from the base theme so components keep
-  working: canvas/surface/ink/ink-soft/jungle/clay/line.
+    data-design="1"  → Oura      (warm oatmeal, sage accent, pills, Fraunces)
+    data-design="2"  → Ashton    (parchment, jungle/clay, sharp, Cormorant) [default]
+    data-design="3"  → Evermade  (cream/maroon, hot pink, mono labels, pills)
+
+  How it works: Tailwind v4 utilities compile to `var(--token)`, so overriding
+  the tokens under `html[data-design="N"]` re-skins every component instantly —
+  no rebuild, no reload. Component-level differences (button shape, eyebrow
+  font, card radius…) are captured as extra CSS variables consumed by one shared
+  set of component rules.
+
+  This file exists ONLY on the demo-switcher branch. The three real designs live
+  as standalone commits: design-1-oura / design-2-ashton / design-3-evermade.
 */
 @theme {
-  /* ---- Colors ---- */
-  --color-canvas: #fef0e6; /* cream paper — page canvas */
-  --color-surface: #ffdce2; /* blush card — lifted panels & cards */
-  --color-ink: #2d070b; /* wine maroon — headings & strong text */
-  --color-ink-soft: #5c4045; /* softened maroon — body & secondary text */
-  --color-jungle: #2d070b; /* maroon stage — dark bands & footer */
-  --color-jungle-soft: #45151c;
-  --color-clay: #ff0389; /* hot pink — accent as border/text ONLY */
-  --color-clay-deep: #d10070;
-  --color-line: #ffc7de; /* soft pink — hairlines & gentle card edges */
+  /* Semantic tokens (defaults = Design 2) — generate the Tailwind utilities.
+     Values are overridden per design by the html[data-design] scopes below. */
+  --color-canvas: #ece6da;
+  --color-surface: #f5f1e9;
+  --color-ink: #2b2823;
+  --color-ink-soft: #5c574e;
+  --color-jungle: #2e3a2c;
+  --color-jungle-soft: #3c4a38;
+  --color-clay: #a06a4b;
+  --color-clay-deep: #855838;
+  --color-line: #cfc7b8;
   --color-white: #ffffff;
 
-  /* ---- Typography (three-tier system) ---- */
-  --font-serif: 'Instrument Serif', ui-serif, Georgia, 'Times New Roman', serif;
-  --font-sans: 'Manrope', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Cormorant Garamond', ui-serif, Georgia, 'Times New Roman', serif;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'DM Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
-  /* Type scale — magazine display, compact technical labels */
-  --text-eyebrow: 0.75rem; /* 12px — DM Mono tracked uppercase */
-  --text-body: 1.0625rem; /* 17px */
-  --text-lead: 1.25rem; /* 20px */
-  --text-h3: 1.75rem; /* 28px */
-  --text-h2: 2.5rem; /* 40px */
-  --text-h1: 3.5rem; /* 56px */
-  --text-display: 5.5rem; /* 88px — toward Evermade's oversized display */
+  --text-eyebrow: 0.8125rem;
+  --text-body: 1.0625rem;
+  --text-lead: 1.25rem;
+  --text-h3: 1.75rem;
+  --text-h2: 2.5rem;
+  --text-h1: 3.5rem;
+  --text-display: 4.5rem;
 
-  /* ---- Spacing rhythm ---- */
   --spacing-section: 7.5rem;
-
-  /* ---- Radius (pills + soft cards) ---- */
-  --radius-sm: 3px;
+  --radius-sm: 4px;
   --radius-md: 8px;
-  --radius-card: 8px;
-  --radius-input: 9999px;
-
-  /* ---- Container ---- */
   --container-prose: 46rem;
 
-  /* ---- Motion ---- */
   --ease-out-soft: cubic-bezier(0.16, 1, 0.3, 1);
   --animate-fade-in: fade-in 0.5s ease both;
   --animate-fade-up: fade-up 0.7s var(--ease-out-soft) both;
   --animate-ken-burns: ken-burns 14s ease-out both;
 }
 
+/* ============================================================= *
+ *  Per-design token sets (colors, fonts, sizes, component vars)  *
+ * ============================================================= */
+
+/* :root fallback == Design 2, in case no data-design is set yet */
+:root,
+html[data-design='2'] {
+  --color-canvas: #ece6da;
+  --color-surface: #f5f1e9;
+  --color-ink: #2b2823;
+  --color-ink-soft: #5c574e;
+  --color-jungle: #2e3a2c;
+  --color-jungle-soft: #3c4a38;
+  --color-clay: #a06a4b;
+  --color-clay-deep: #855838;
+  --color-line: #cfc7b8;
+
+  --font-serif: 'Cormorant Garamond', ui-serif, Georgia, 'Times New Roman', serif;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  --text-display: 4.5rem;
+  --radius-input: 4px;
+  --card-radius: 0px;
+
+  --btn-radius: 4px;
+  --btn-font: var(--font-sans);
+  --btn-tracking: 0.16em;
+  --btn-outline: var(--color-clay);
+  --btn-hover-bg: var(--color-clay);
+
+  --eyebrow-font: var(--font-sans);
+  --eyebrow-tracking: 0.22em;
+  --eyebrow-dot: '';
+
+  --heading-weight: 500;
+  --display-tracking: 0.02em;
+  --body-color: var(--color-ink);
+  --body-leading: 1.65;
+}
+
+/* Design 1 — Oura */
+html[data-design='1'] {
+  --color-canvas: #f7f1e8;
+  --color-surface: #fefaef;
+  --color-ink: #222428;
+  --color-ink-soft: #4a4741;
+  --color-jungle: #222428;
+  --color-jungle-soft: #33363b;
+  --color-clay: #5b6550;
+  --color-clay-deep: #49523f;
+  --color-line: #ececec;
+
+  --font-serif: 'Fraunces', ui-serif, Georgia, 'Times New Roman', serif;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  --text-display: 5rem;
+  --radius-input: 12px;
+  --card-radius: 8px;
+
+  --btn-radius: 9999px;
+  --btn-font: var(--font-sans);
+  --btn-tracking: 0.025em;
+  --btn-outline: var(--color-ink-soft);
+  --btn-hover-bg: var(--color-ink);
+
+  --eyebrow-font: var(--font-sans);
+  --eyebrow-tracking: 0.06em;
+  --eyebrow-dot: '';
+
+  --heading-weight: 300;
+  --display-tracking: -0.025em;
+  --body-color: var(--color-ink-soft);
+  --body-leading: 1.5;
+}
+
+/* Design 3 — Evermade */
+html[data-design='3'] {
+  --color-canvas: #fef0e6;
+  --color-surface: #ffdce2;
+  --color-ink: #2d070b;
+  --color-ink-soft: #5c4045;
+  --color-jungle: #2d070b;
+  --color-jungle-soft: #45151c;
+  --color-clay: #ff0389;
+  --color-clay-deep: #d10070;
+  --color-line: #ffc7de;
+
+  --font-serif: 'Instrument Serif', ui-serif, Georgia, 'Times New Roman', serif;
+  --font-sans: 'Manrope', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'DM Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --text-display: 5.5rem;
+  --radius-input: 9999px;
+  --card-radius: 8px;
+
+  --btn-radius: 9999px;
+  --btn-font: var(--font-mono);
+  --btn-tracking: 0.04em;
+  --btn-outline: var(--color-clay);
+  --btn-hover-bg: var(--color-jungle);
+
+  --eyebrow-font: var(--font-mono);
+  --eyebrow-tracking: 0.04em;
+  --eyebrow-dot: '· ';
+
+  --heading-weight: 400;
+  --display-tracking: -0.01em;
+  --body-color: var(--color-ink-soft);
+  --body-leading: 1.5;
+}
+
 @keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
-
 @keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: none; }
 }
-
 @keyframes ken-burns {
-  from {
-    transform: scale(1.12);
-  }
-  to {
-    transform: scale(1);
-  }
+  from { transform: scale(1.12); }
+  to { transform: scale(1); }
 }
 
 /* ---- Base layer ---- */
@@ -97,7 +190,6 @@
     -webkit-text-size-adjust: 100%;
   }
 
-  /* Anchored sections land below the fixed header */
   [id] {
     scroll-margin-top: 6rem;
   }
@@ -105,21 +197,23 @@
   body {
     margin: 0;
     background-color: var(--color-canvas);
-    color: var(--color-ink-soft);
+    color: var(--body-color);
     font-family: var(--font-sans);
     font-size: var(--text-body);
-    line-height: 1.5;
+    line-height: var(--body-leading);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    transition:
+      background-color 0.4s ease,
+      color 0.4s ease;
   }
 
-  /* Instrument Serif headings — magazine gravitas, single 400 weight */
   h1,
   h2,
   h3,
   h4 {
     font-family: var(--font-serif);
-    font-weight: 400;
+    font-weight: var(--heading-weight);
     line-height: 1.1;
     color: var(--color-ink);
     margin: 0;
@@ -127,8 +221,8 @@
 
   .font-display {
     font-family: var(--font-serif);
-    font-weight: 400;
-    letter-spacing: -0.01em;
+    font-weight: var(--heading-weight);
+    letter-spacing: var(--display-tracking);
   }
 
   a {
@@ -142,14 +236,12 @@
     height: auto;
   }
 
-  /* Pill inputs (Evermade: inputs are 9999px) */
   input,
-  textarea,
   select {
     border-radius: var(--radius-input);
   }
   textarea {
-    border-radius: 16px; /* multiline can't be a pill — soften instead */
+    border-radius: 16px;
   }
 
   :focus-visible {
@@ -176,20 +268,18 @@
 }
 
 @layer components {
-  /* DM Mono tracked-uppercase eyebrow with the Evermade dot prefix */
   .eyebrow {
-    font-family: var(--font-mono);
+    font-family: var(--eyebrow-font);
     font-size: var(--text-eyebrow);
     font-weight: 500;
-    letter-spacing: 0.04em;
+    letter-spacing: var(--eyebrow-tracking);
     text-transform: uppercase;
     color: var(--color-clay);
   }
   .eyebrow::before {
-    content: '· ';
+    content: var(--eyebrow-dot, '');
   }
 
-  /* Navigation link with an underline that grows from the left on hover/focus */
   .nav-link {
     position: relative;
   }
@@ -211,23 +301,19 @@
     transform: scaleX(1);
   }
 
-  /* Route-change fade — keyed on pathname so each navigation replays it */
   .page-enter {
     animation: var(--animate-fade-in);
   }
 
-  /* 8px Evermade card radius on bordered card surfaces & framed images,
-     applied globally so individual components stay untouched. Hairline
-     dividers (border-b/-y) are unaffected. */
+  /* Card / framed-image radius driven by --card-radius (0 on Ashton, 8px else) */
   .border.bg-surface,
   .border.bg-canvas,
   .border-2.bg-surface,
   figure.border {
-    border-radius: var(--radius-card);
+    border-radius: var(--card-radius);
     overflow: hidden;
   }
 
-  /* Full-bleed background video (YouTube iframe scaled to cover the hero) */
   .bg-video {
     position: absolute;
     inset: 0;
@@ -237,18 +323,15 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    /* Over-scale so any residual YouTube chrome (top title / bottom bar) is
-       cropped outside the visible area. */
     transform: translate(-50%, -50%) scale(1.35);
     width: 100vw;
-    height: 56.25vw; /* 16:9 derived from width */
-    min-width: 177.78vh; /* 16:9 derived from height — guarantees cover */
+    height: 56.25vw;
+    min-width: 177.78vh;
     min-height: 100vh;
     border: 0;
     pointer-events: none;
   }
 
-  /* Inline link — pink text + pink underline (flat, no pill) */
   .link-underline {
     border-bottom: 1px solid currentColor;
     padding-bottom: 1px;
@@ -258,34 +341,28 @@
     opacity: 0.65;
   }
 
-  /*
-    Buttons — Evermade pill system (hot pink is NEVER a filled background):
-    .btn        pink outline pill, pink DM Mono text — the signature action
-    .btn-solid  wine-maroon filled pill, white text — dark primary
-    .btn-clay   wine-maroon filled pill (booking CTA — high-contrast solid)
-    .btn-ondark white outline pill for dark/hero surfaces
-  */
+  /* Buttons — shape/font/colour all driven by the per-design --btn-* tokens */
   .btn {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    font-family: var(--font-mono);
-    font-size: 0.875rem;
-    font-weight: 400;
-    letter-spacing: 0.04em;
+    font-family: var(--btn-font);
+    font-size: var(--text-eyebrow);
+    font-weight: 500;
+    letter-spacing: var(--btn-tracking);
     text-transform: uppercase;
-    padding: 0.875rem 1.5rem;
-    border: 1px solid var(--color-clay);
-    color: var(--color-clay);
-    border-radius: 9999px;
+    padding: 0.875rem 1.625rem;
+    border: 1px solid var(--btn-outline);
+    color: var(--btn-outline);
+    border-radius: var(--btn-radius);
     transition:
       background-color 0.25s ease,
       border-color 0.25s ease,
       color 0.25s ease;
   }
   .btn:hover {
-    background-color: var(--color-jungle);
-    border-color: var(--color-jungle);
+    background-color: var(--btn-hover-bg);
+    border-color: var(--btn-hover-bg);
     color: var(--color-white);
   }
   .btn-solid,

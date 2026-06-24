@@ -3,6 +3,7 @@ import { HeroProvider } from '@/lib/hero'
 import { Header } from './Header'
 import { Footer } from './Footer'
 import { ScrollToTop } from './ScrollToTop'
+import { DesignSwitcher } from '@/components/DesignSwitcher'
 
 export function Layout() {
   const location = useLocation()
@@ -24,6 +25,8 @@ export function Layout() {
         </div>
       </main>
       <Footer />
+      {/* Demo-only: floating control to flip between the three designs */}
+      <DesignSwitcher />
     </HeroProvider>
   )
 }
