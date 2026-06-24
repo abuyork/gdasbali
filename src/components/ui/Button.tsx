@@ -6,7 +6,7 @@ interface ButtonProps {
   /** Internal route or external URL. */
   to: string
   external?: boolean
-  variant?: 'outline' | 'solid' | 'ondark'
+  variant?: 'outline' | 'solid' | 'ondark' | 'clay'
   className?: string
 }
 
@@ -14,6 +14,7 @@ const variants = {
   outline: 'btn',
   solid: 'btn btn-solid',
   ondark: 'btn btn-ondark',
+  clay: 'btn btn-clay',
 }
 
 export function Button({
