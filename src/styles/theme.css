@@ -1,175 +1,52 @@
 @import 'tailwindcss';
 
 /*
-  GDAS Bali — DEMO SWITCHER build.
-  All three landing-page designs in one stylesheet, switched at runtime via the
-  `data-design` attribute on <html> (set by the floating DesignSwitcher).
-
-    data-design="1"  → Oura      (warm oatmeal, sage accent, pills, Fraunces)
-    data-design="2"  → Ashton    (parchment, jungle/clay, sharp, Cormorant) [default]
-    data-design="3"  → Evermade  (cream/maroon, hot pink, mono labels, pills)
-
-  How it works: Tailwind v4 utilities compile to `var(--token)`, so overriding
-  the tokens under `html[data-design="N"]` re-skins every component instantly —
-  no rebuild, no reload. Component-level differences (button shape, eyebrow
-  font, card radius…) are captured as extra CSS variables consumed by one shared
-  set of component rules.
-
-  This file exists ONLY on the demo-switcher branch. The three real designs live
-  as standalone commits: design-1-oura / design-2-ashton / design-3-evermade.
+  GDAS Bali — design tokens (Ashton)
+  Editorial / quiet-luxury language: warm parchment canvas, ink text, a single
+  deep botanical accent (jungle green), a warm clay secondary, letterspaced
+  serif display, hairline borders, sharp geometry, no shadows.
 */
 @theme {
-  /* Semantic tokens (defaults = Design 2) — generate the Tailwind utilities.
-     Values are overridden per design by the html[data-design] scopes below. */
-  --color-canvas: #ece6da;
-  --color-surface: #f5f1e9;
-  --color-ink: #2b2823;
-  --color-ink-soft: #5c574e;
-  --color-jungle: #2e3a2c;
+  /* ---- Colors ---- */
+  --color-canvas: #ece6da; /* warm parchment — dominant page surface */
+  --color-surface: #f5f1e9; /* elevated/lighter surface */
+  --color-ink: #2b2823; /* primary text, hairlines */
+  --color-ink-soft: #5c574e; /* secondary text, captions */
+  --color-jungle: #2e3a2c; /* deep botanical accent — dark bands & footer */
   --color-jungle-soft: #3c4a38;
-  --color-clay: #a06a4b;
+  --color-clay: #a06a4b; /* warm secondary accent — CTAs, links */
   --color-clay-deep: #855838;
-  --color-line: #cfc7b8;
+  --color-line: #cfc7b8; /* hairline border on canvas */
   --color-white: #ffffff;
 
+  /* ---- Typography ---- */
   --font-serif: 'Cormorant Garamond', ui-serif, Georgia, 'Times New Roman', serif;
   --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'DM Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
-  --text-eyebrow: 0.8125rem;
-  --text-body: 1.0625rem;
-  --text-lead: 1.25rem;
-  --text-h3: 1.75rem;
-  --text-h2: 2.5rem;
-  --text-h1: 3.5rem;
-  --text-display: 4.5rem;
+  /* Editorial type scale (serif display set wide) */
+  --text-eyebrow: 0.8125rem; /* 13px — tracked uppercase labels */
+  --text-body: 1.0625rem; /* 17px */
+  --text-lead: 1.25rem; /* 20px */
+  --text-h3: 1.75rem; /* 28px */
+  --text-h2: 2.5rem; /* 40px */
+  --text-h1: 3.5rem; /* 56px */
+  --text-display: 4.5rem; /* 72px */
 
-  --spacing-section: 7.5rem;
-  --radius-sm: 4px;
-  --radius-md: 8px;
+  /* ---- Spacing rhythm ---- */
+  --spacing-section: 7.5rem; /* 120px vertical section rhythm */
+
+  /* ---- Radius (sharp/editorial) ---- */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+
+  /* ---- Container ---- */
   --container-prose: 46rem;
 
+  /* ---- Motion ---- */
   --ease-out-soft: cubic-bezier(0.16, 1, 0.3, 1);
   --animate-fade-in: fade-in 0.5s ease both;
   --animate-fade-up: fade-up 0.7s var(--ease-out-soft) both;
   --animate-ken-burns: ken-burns 14s ease-out both;
-  --animate-marquee: marquee 26s linear infinite;
-}
-
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-/* ============================================================= *
- *  Per-design token sets (colors, fonts, sizes, component vars)  *
- * ============================================================= */
-
-/* :root fallback == Design 2, in case no data-design is set yet */
-:root,
-html[data-design='2'] {
-  --color-canvas: #ece6da;
-  --color-surface: #f5f1e9;
-  --color-ink: #2b2823;
-  --color-ink-soft: #5c574e;
-  --color-jungle: #2e3a2c;
-  --color-jungle-soft: #3c4a38;
-  --color-clay: #a06a4b;
-  --color-clay-deep: #855838;
-  --color-line: #cfc7b8;
-
-  --font-serif: 'Cormorant Garamond', ui-serif, Georgia, 'Times New Roman', serif;
-  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-
-  --text-display: 4.5rem;
-  --radius-input: 4px;
-  --card-radius: 0px;
-
-  --btn-radius: 4px;
-  --btn-font: var(--font-sans);
-  --btn-tracking: 0.16em;
-  --btn-outline: var(--color-clay);
-  --btn-hover-bg: var(--color-clay);
-
-  --eyebrow-font: var(--font-sans);
-  --eyebrow-tracking: 0.22em;
-  --eyebrow-dot: '';
-
-  --heading-weight: 500;
-  --display-tracking: 0.02em;
-  --body-color: var(--color-ink);
-  --body-leading: 1.65;
-}
-
-/* Design 1 — Oura */
-html[data-design='1'] {
-  --color-canvas: #f7f1e8;
-  --color-surface: #fefaef;
-  --color-ink: #222428;
-  --color-ink-soft: #4a4741;
-  --color-jungle: #222428;
-  --color-jungle-soft: #33363b;
-  --color-clay: #5b6550;
-  --color-clay-deep: #49523f;
-  --color-line: #ececec;
-
-  --font-serif: 'Fraunces', ui-serif, Georgia, 'Times New Roman', serif;
-  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-
-  --text-display: 5rem;
-  --radius-input: 12px;
-  --card-radius: 8px;
-
-  --btn-radius: 9999px;
-  --btn-font: var(--font-sans);
-  --btn-tracking: 0.025em;
-  --btn-outline: var(--color-ink-soft);
-  --btn-hover-bg: var(--color-ink);
-
-  --eyebrow-font: var(--font-sans);
-  --eyebrow-tracking: 0.06em;
-  --eyebrow-dot: '';
-
-  --heading-weight: 300;
-  --display-tracking: -0.025em;
-  --body-color: var(--color-ink-soft);
-  --body-leading: 1.5;
-}
-
-/* Design 3 — Evermade */
-html[data-design='3'] {
-  --color-canvas: #fef0e6;
-  --color-surface: #ffdce2;
-  --color-ink: #2d070b;
-  --color-ink-soft: #5c4045;
-  --color-jungle: #2d070b;
-  --color-jungle-soft: #45151c;
-  --color-clay: #ff0389;
-  --color-clay-deep: #d10070;
-  --color-line: #ffc7de;
-
-  --font-serif: 'Instrument Serif', ui-serif, Georgia, 'Times New Roman', serif;
-  --font-sans: 'Manrope', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'DM Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-
-  --text-display: 5.5rem;
-  --radius-input: 9999px;
-  --card-radius: 8px;
-
-  --btn-radius: 9999px;
-  --btn-font: var(--font-mono);
-  --btn-tracking: 0.04em;
-  --btn-outline: var(--color-clay);
-  --btn-hover-bg: var(--color-jungle);
-
-  --eyebrow-font: var(--font-mono);
-  --eyebrow-tracking: 0.04em;
-  --eyebrow-dot: '· ';
-
-  --heading-weight: 400;
-  --display-tracking: -0.01em;
-  --body-color: var(--color-ink-soft);
-  --body-leading: 1.5;
 }
 
 @keyframes fade-in {
@@ -196,6 +73,7 @@ html[data-design='3'] {
     -webkit-text-size-adjust: 100%;
   }
 
+  /* Anchored sections land below the fixed header */
   [id] {
     scroll-margin-top: 6rem;
   }
@@ -203,15 +81,12 @@ html[data-design='3'] {
   body {
     margin: 0;
     background-color: var(--color-canvas);
-    color: var(--body-color);
+    color: var(--color-ink);
     font-family: var(--font-sans);
     font-size: var(--text-body);
-    line-height: var(--body-leading);
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    transition:
-      background-color 0.4s ease,
-      color 0.4s ease;
   }
 
   h1,
@@ -219,16 +94,17 @@ html[data-design='3'] {
   h3,
   h4 {
     font-family: var(--font-serif);
-    font-weight: var(--heading-weight);
+    font-weight: 500;
     line-height: 1.1;
     color: var(--color-ink);
     margin: 0;
   }
 
+  /* Wide tracking on serif display — the editorial signature */
   .font-display {
     font-family: var(--font-serif);
-    font-weight: var(--heading-weight);
-    letter-spacing: var(--display-tracking);
+    font-weight: 500;
+    letter-spacing: 0.02em;
   }
 
   a {
@@ -243,13 +119,12 @@ html[data-design='3'] {
   }
 
   input,
+  textarea,
   select {
-    border-radius: var(--radius-input);
-  }
-  textarea {
-    border-radius: 16px;
+    border-radius: var(--radius-md);
   }
 
+  /* Visible focus ring for keyboard users (a11y) */
   :focus-visible {
     outline: 2px solid var(--color-clay);
     outline-offset: 2px;
@@ -274,18 +149,17 @@ html[data-design='3'] {
 }
 
 @layer components {
+  /* Tracked uppercase eyebrow label (editorial chapter mark) */
   .eyebrow {
-    font-family: var(--eyebrow-font);
+    font-family: var(--font-sans);
     font-size: var(--text-eyebrow);
     font-weight: 500;
-    letter-spacing: var(--eyebrow-tracking);
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--color-clay);
   }
-  .eyebrow::before {
-    content: var(--eyebrow-dot, '');
-  }
 
+  /* Navigation link with an underline that grows from the left on hover/focus */
   .nav-link {
     position: relative;
   }
@@ -307,19 +181,12 @@ html[data-design='3'] {
     transform: scaleX(1);
   }
 
+  /* Route-change fade — keyed on pathname so each navigation replays it */
   .page-enter {
     animation: var(--animate-fade-in);
   }
 
-  /* Card / framed-image radius driven by --card-radius (0 on Ashton, 8px else) */
-  .border.bg-surface,
-  .border.bg-canvas,
-  .border-2.bg-surface,
-  figure.border {
-    border-radius: var(--card-radius);
-    overflow: hidden;
-  }
-
+  /* Full-bleed background video (YouTube iframe scaled to cover the hero) */
   .bg-video {
     position: absolute;
     inset: 0;
@@ -329,15 +196,17 @@ html[data-design='3'] {
     position: absolute;
     top: 50%;
     left: 50%;
+    /* Over-scale so any residual YouTube chrome is cropped outside the view. */
     transform: translate(-50%, -50%) scale(1.35);
     width: 100vw;
-    height: 56.25vw;
-    min-width: 177.78vh;
+    height: 56.25vw; /* 16:9 derived from width */
+    min-width: 177.78vh; /* 16:9 derived from height — guarantees cover */
     min-height: 100vh;
     border: 0;
     pointer-events: none;
   }
 
+  /* Hairline-underlined inline link, no color shift on hover */
   .link-underline {
     border-bottom: 1px solid currentColor;
     padding-bottom: 1px;
@@ -347,40 +216,54 @@ html[data-design='3'] {
     opacity: 0.65;
   }
 
-  /* Buttons — shape/font/colour all driven by the per-design --btn-* tokens */
+  /*
+    Buttons — editorial, sharp 4px geometry:
+    .btn        clay outline (no fill)
+    .btn-solid  jungle filled
+    .btn-clay   clay filled — the primary booking CTA (brightest in the bar)
+    .btn-ondark white outline for dark/hero surfaces
+  */
   .btn {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    font-family: var(--btn-font);
+    font-family: var(--font-sans);
     font-size: var(--text-eyebrow);
     font-weight: 500;
-    letter-spacing: var(--btn-tracking);
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    padding: 0.875rem 1.625rem;
-    border: 1px solid var(--btn-outline);
-    color: var(--btn-outline);
-    border-radius: var(--btn-radius);
+    padding: 0.875rem 1.75rem;
+    border: 1px solid var(--color-clay);
+    color: var(--color-clay);
+    border-radius: var(--radius-md);
     transition:
       background-color 0.25s ease,
       border-color 0.25s ease,
       color 0.25s ease;
   }
   .btn:hover {
-    background-color: var(--btn-hover-bg);
-    border-color: var(--btn-hover-bg);
+    background-color: var(--color-clay);
+    border-color: var(--color-clay);
     color: var(--color-white);
   }
-  .btn-solid,
-  .btn-clay {
+  .btn-solid {
     background-color: var(--color-jungle);
     border-color: var(--color-jungle);
     color: var(--color-white);
   }
-  .btn-solid:hover,
-  .btn-clay:hover {
+  .btn-solid:hover {
     background-color: var(--color-jungle-soft);
     border-color: var(--color-jungle-soft);
+    color: var(--color-white);
+  }
+  .btn-clay {
+    background-color: var(--color-clay);
+    border-color: var(--color-clay);
+    color: var(--color-white);
+  }
+  .btn-clay:hover {
+    background-color: var(--color-clay-deep);
+    border-color: var(--color-clay-deep);
     color: var(--color-white);
   }
   .btn-ondark {
